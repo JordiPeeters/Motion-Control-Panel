@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>WATCHOUT Test</title>
+</head>
+
+<body class="radial">
+
+    <div class="radial grid">
+
+        <main role="main">
+
+            <section class="centered">
+
+                <nav class="chapters">
+                    <ul>                        
+                        <li onclick="run('Test')" class="btn">play test</li>
+                        <li onclick="gotoControlCue('Test', 'Start')" class="btn">to start timeline</li>
+                        <li onclick="gotoControlCue('Test', 'End')" class="btn">to end timeline</li>
+                        <li onclick="toggle('Test')" class="btn">toggle timeline</li>
+                    </ul>
+                </nav>
+            </section>
+        </main>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
