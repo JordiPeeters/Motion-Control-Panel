@@ -58,7 +58,7 @@ function gotoControlCue(timeline, command) {
 }
 
 function getStatus(timeline) {
-  // send('getStatus "' + timeline + '"\n');
+  send('getStatus \n');
   console.log(states);
 }
 
@@ -68,7 +68,7 @@ function ping(){
 
 function stopAll() {
   Object.keys(states).forEach(function (item) {
-    console.log(item); // key
+    console.log(item);
     kill(item);
   });
 }
