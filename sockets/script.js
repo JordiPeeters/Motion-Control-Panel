@@ -1,5 +1,3 @@
-
-  
 // set the IP address of the machine you wish to connect to
 // watchout listens on the port 3040
 //var host = "ws://10.172.15.244:3040";
@@ -8,10 +6,11 @@
 // var host = "ws://10.0.0.100:3040";
 var host = "ws://192.168.253.80:3040";
 var socket = new WebSocket(host);
-var states = { HSD: false, D48V: false };
+var states = {'': true, 'Test': true, 'BAnnaan': true, 'Timeline 5': true};
 
 socket.onopen = function () {
   console.log("Socket Status: " + socket.readyState + " (open)");
+  ping();
 };
 
 socket.onmessage = function (msg) {
@@ -58,3 +57,30 @@ function gotoControlCue(timeline, command) {
   send('gotoControlCue "' + command + '" false ' + timeline + "\n");
 }
 
+function getStatus(timeline) {
+  // send('getStatus "' + timeline + '"\n');
+  console.log(states);
+}
+
+function ping(){
+  send('ping \n');
+}
+
+function stopAll() {
+  Object.keys(states).forEach(function (item) {
+    console.log(item); // key
+    kill(item);
+  });
+}
+
+function reset(timeline){
+  send('reset "' + timeline + '"\n');
+
+}
+
+function goOnline(){
+  send('online true \n');
+}
+function goOffline(){
+  send('online false \n');
+}
