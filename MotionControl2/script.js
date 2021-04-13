@@ -5,9 +5,16 @@
 // var host = "ws://213.46.228.196:3040";
 // var host = "ws://10.0.0.100:3040";
 // var host = "ws://192.168.0.100:3040";
-var host = "ws://127.0.0.1:3040";
-var socket = new WebSocket(host);
-var states = {'': true, 'Test': true, 'BAnnaan': true, 'Timeline 5': true};
+const express = require('express')
+const app = express()
+const server = require('http').createServer(app);
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({ server });
+// var host = "ws://127.0.0.1:3040";
+// var socket = new WebSocket(host);
+// var states = {'': true, 'Test': true, 'BAnnaan': true, 'Timeline 5': true};
+
 
 socket.onopen = function () {
   console.log("Socket Status: " + socket.readyState + " (open)");
