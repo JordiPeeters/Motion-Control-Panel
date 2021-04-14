@@ -5,29 +5,51 @@
 // var host = "ws://213.46.228.196:3040";
 // var host = "ws://10.0.0.100:3040";
 // var host = "ws://192.168.0.100:3040";
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const server = require('http').createServer(app);
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({ server:server });
+
+
+wss.on('connection', function connection(ws) {
+  console.log('a new client connected');
+  ws.send('connected to server');
+
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+    ws.send('got your message, its:' + message);
+  });
+
+});
+
+
+app.get('/', (req, res) => res.send('heloworld'));
+
+server.listen(3000, () => console.log('listening on port :3000'));
 // var host = "ws://127.0.0.1:3040";
 // var socket = new WebSocket(host);
-// var states = {'': true, 'Test': true, 'BAnnaan': true, 'Timeline 5': true};
 
 
-socket.onopen = function () {
-  console.log("Socket Status: " + socket.readyState + " (open)");
-  ping();
-};
 
-socket.onmessage = function (msg) {
-  console.log("Received: " + msg.data);
-};
+// socket.onopen = function () {
+//   console.log("Socket Status: " + socket.readyState + " (open)");
+//   ping();
+// };
 
-socket.onclose = function () {
-  console.log("Socket Status: " + socket.readyState + " (Closed)");
-};
+// socket.onmessage = function (msg) {
+//   console.log("Received: " + msg.data);
+// };
+
+// socket.onclose = function () {
+//   console.log("Socket Status: " + socket.readyState + " (Closed)");
+// };
+
+
+//watchout functions
+
+var states = {'': true, 'Test': true, 'BAnnaan': true, 'Timeline 5': true};
 
 function send(message) {
   try {
