@@ -10,7 +10,7 @@
 
 <body>
     client 1
-    <button onclick="sendMessage()">sent message to server</button>
+    <button onclick="toggle('')">send message to server</button>
 </body>
 <script>
     // Create WebSocket connection.
@@ -26,9 +26,10 @@
         console.log('Message from server ', event.data);
     });
 
-    const sendMessage = () =>{
-        socket.send('message from client 1');
+    const sendMessage = (message) =>{
+        socket.send(message);
     }
 </script>
-
+<!-- <script src="server.js"></script> -->
+<script src="watchoutFunctions.js"></script>
 </html>
