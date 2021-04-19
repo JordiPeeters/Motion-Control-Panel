@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socket Thing1</title>
+    <title>Socket Thing2</title>
 </head>
 <body>
-    Client1
-    <button onclick="sendMessage('hello from client 1')">Send Msg</button>
-    <button onclick="sendMessage('toggle')">toggle watchout</button>
+    Client2
+    <button onclick="sendMessage()">Send Msg</button>
 </body>
 <script>
     // Create WebSocket connection.
-    const socket = new WebSocket('ws://localhost:3000');
+    const socket = new WebSocket('wss://jordipeeterx.online:7685');
 
     // Connection opened
     socket.addEventListener('open', function (event) {
@@ -24,8 +23,8 @@
         console.log('Message from server ', event.data);
     });
 
-    const sendMessage = (message) => {
-        socket.send(message);
+    const sendMessage = () => {
+        socket.send('Hello From Client2!');
     }
 </script>
 </html>
