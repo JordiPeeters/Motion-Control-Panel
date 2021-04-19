@@ -21,11 +21,15 @@
         // Listen for messages
         socket.addEventListener('message', function (event) {
             console.log('Message from server ', event.data);
+            if (event.data == "toggle"){
+                toggle('');
+            }
         });
 
         const sendMessage = () => {
             socket.send('Hello From Client1!');
         }
+
     </script>
 </body>
 <script src="watchoutsockets.js"></script>

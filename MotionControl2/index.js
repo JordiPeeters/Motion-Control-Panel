@@ -26,6 +26,8 @@ wss.on("connection", function connection(ws) {
         client.send(message);
         if (message == "toggle") {
           //send 
+          console.log("received message toggle");
+          ws.send('received toggle message');
         }
       }
     });

@@ -7,7 +7,8 @@
 </head>
 <body>
     Client1
-    <button onclick="sendMessage()">Send Msg</button>
+    <button onclick="sendMessage('hello from client 1')">Send Msg</button>
+    <button onclick="sendMessage('toggle')">toggle watchout</button>
 </body>
 <script>
     // Create WebSocket connection.
@@ -23,8 +24,8 @@
         console.log('Message from server ', event.data);
     });
 
-    const sendMessage = () => {
-        socket.send('Hello From Client1!');
+    const sendMessage = (message) => {
+        socket.send(message);
     }
 </script>
 </html>
