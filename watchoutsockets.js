@@ -8,6 +8,9 @@ WOsocket.onopen = function () {
   ping();
 };
 
+
+
+
 WOsocket.onmessage = function (msg) {
   console.log("Received: " + msg.data);
 };
