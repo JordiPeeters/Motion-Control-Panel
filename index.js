@@ -28,4 +28,4 @@ wss.on("connection", function connection(ws) {
 app.get("/", (req, res) => res.send("Hello World!"));
 
 server.listen(7685, () => console.log(`Listening on port :7685`));
-app.listen(process.env.PORT, () => console.log(`Server listening on port : HirokuPORT`));
+app.listen(process.env.PORT, () => console.log(`Server listening on port : HirokuPORT, %d`));
