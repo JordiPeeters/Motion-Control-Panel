@@ -10,8 +10,8 @@ const app = express();
 const server = require('http').createServer(app);
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ server:server });
-
+const wss = new WebSocket.Server({ 'wss://jordipeeters.online':server });
+// var connection = new WebSocket('ws://html5rocks.websocket.org/echo', ['soap', 'xmpp']);
 
 wss.on('connection', function connection(ws) {
   console.log('a new client connected');
@@ -27,7 +27,7 @@ wss.on('connection', function connection(ws) {
 
 app.get('/', (req, res) => res.send('heloworld'));
 
-server.listen(3000, () => console.log('listening on port :3000'));
+server.listen(7685, () => console.log('listening on port :7685'));
 // var host = "ws://127.0.0.1:3040";
 // var socket = new WebSocket(host);
 
