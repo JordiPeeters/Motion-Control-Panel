@@ -1,0 +1,26 @@
+{
+  "installaties": [
+    {
+      "naam": "projectoren kaleidoscoop",
+      "categorie": "projectoren",
+      "task": "PROJECTOREN - KALEIDOSCOOP AAN",
+      "tweede task": "",
+      "delay": "10"
+    },
+    {
+      "naam": "alles aan",
+      "categorie": "opstarten / afsluiten",
+      "task": "ALLES AAN"
+    },
+    {
+      "naam": "led tunnel aan",
+      "categorie": "opstarten / afsluiten",
+      "task": "LEDTUNNEL AAN"
+    },
+    {
+      "naam": "led tunnel uit",
+      "categorie": "opstarten / afsluiten",
+      "task": "LED TUNNEL UIT"
+    }
+  ]
+}
