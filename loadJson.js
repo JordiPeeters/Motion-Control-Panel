@@ -20,7 +20,3 @@ window.onload = () => {
         createButtons(data);
     });
 };
-
-// window.onload = () => {
-//   fetchJSONFile("data.json", console.log("json loaded"));
-// };

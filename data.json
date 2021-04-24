@@ -5,22 +5,26 @@
       "categorie": "projectoren",
       "task": "PROJECTOREN - KALEIDOSCOOP AAN",
       "tweede task": "",
-      "delay": "10"
+      "delay": "10",
+      "scherm": "2"
     },
     {
       "naam": "alles aan",
       "categorie": "opstarten / afsluiten",
-      "task": "ALLES AAN"
+      "task": "ALLES AAN",
+      "scherm": "1"
     },
     {
       "naam": "led tunnel aan",
       "categorie": "opstarten / afsluiten",
-      "task": "LEDTUNNEL AAN"
+      "task": "LEDTUNNEL AAN",
+      "scherm": "2"
     },
     {
       "naam": "led tunnel uit",
       "categorie": "opstarten / afsluiten",
-      "task": "LED TUNNEL UIT"
+      "task": "LED TUNNEL UIT",
+      "scherm": "2"
     }
   ]
 }
