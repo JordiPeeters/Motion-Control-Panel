@@ -10,17 +10,17 @@ let loginScreen = document.getElementById("loginscreen");
 
 //onclicks
 homeButton.onclick = () => {
-    homeScreen.style.display = "flex";
+    homePage.style.display = "flex";
     advancedScreen.style.display = "none"
     loginScreen.style.display = "none"
 };
 advancedButton.onclick = () => {
-    homeScreen.style.display = "none";
+    homePage.style.display = "none";
     advancedScreen.style.display = "flex"
     loginScreen.style.display = "none"
 };
 loginButton.onclick = () => {
-    homeScreen.style.display = "none";
+    homePage.style.display = "none";
     advancedScreen.style.display = "none"
     loginScreen.style.display = "flex"
 };

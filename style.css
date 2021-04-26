@@ -8,13 +8,14 @@ body {
   background-size: cover;
   width: 100%;
   margin: 0px;
-  /* overflow: hidden; */
+  overflow: hidden;
   text-transform: uppercase;
 }
 #navbar {
   display: flex;
   flex-direction: row;
   margin: 0px;
+  margin-bottom: 3vh;
   width: 100%;
   height: 11vh;
   background-color: white;
@@ -28,7 +29,7 @@ body {
   margin: 3vh 15vw 5vh 15vw;
   background-color: #fff;
 }
-.icons:hover{
+.icons:hover {
   cursor: pointer;
 }
 
@@ -39,15 +40,16 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-button{
+button {
   font-family: montserrat, sans-serif;
-  font-weight:600;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
   border: 0px;
 }
 
-#onoffbuttonsHome {
+/* ??? */
+#homescreen {
   height: 85vh;
   display: flex;
   flex-direction: column;
@@ -99,15 +101,6 @@ button{
   transition: 0.2s ease;
 }
 
-/* #on:hover{
-      background: rgb(58, 220, 68);
-    background: linear-gradient(
-      190deg,
-      rgb(84, 213, 93) 32%,
-      rgb(2, 137, 36) 87%
-    );
-  } */
-
 #off {
   background: rgb(241, 85, 85);
   background: linear-gradient(
@@ -118,7 +111,7 @@ button{
   transition: 0.2s ease;
 }
 
-#stop{
+#stop {
   background-color: yellow;
   background-image: url("panicbutton.png");
   transition: 0.2s ease;
@@ -130,31 +123,57 @@ button{
 }
 
 /* advanced screen */
-#advancedscreen{
+#advancedscreen {
   display: none;
-}
-
-.category{
-  margin: 10px;
-  width: 30vw;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 100%;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
 }
-.category button{
-  width: 45%;
-  height: 7vh;
+
+.installationbutton {
+  width: 15vw;
+  height: 15vw;
   margin: 10px;
 }
 
-.onbutton{
-  background-color: rgb(76, 247, 76);
-}
-.offbutton{
-  background-color: rgb(247, 76, 76);
+.installationscreen {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: white;
+  margin: 0px;
+  left: 0px;
 }
 
-#category1{
- 
+.screentitle {
+  text-align: center;
+  margin: 40px;
+  font-size: 35px;
+  font-weight: 900;
+  width: 100%;
+  height: 10vh;
+}
+
+.closebutton {
+  font-size: 40px;
+  position: fixed;
+  right: 0px;
+  margin: 2vw;
+  height: auto;
+  transform: rotate(45deg);
+}
+.closebutton:hover {
+  cursor: pointer;
+}
+
+.onoffbutton {
+  margin: 10px;
+  height: 10vh;
 }
 
 /* clock */

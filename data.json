@@ -1,180 +1,75 @@
 {
   "installaties": [
-    { "_comment": "---scherm 1 functies---" },
+    {
+      "naam": "zwembad",
+      "computers aan": "COMPUTERS  ZWEMBAD AAN",
+      "computers uit": "COMPUTERS - ZWEMBAD UIT",
+      "computers herstart": "COMPUTERS - ZWEMBAD HERSTART",
+      "projectoren aan": "PROJECTOREN - ZWEMBAD AAN",
+      "projectoren uit": "PROJECTOREN - ZWEMBAD UIT"
+    },
+    {
+      "naam": "curved",
+      "computers aan": "COMPUTERS - CURVED AAN",
+      "computers uit": "COMPUTERS - CURVED UIT",
+      "computers herstart": "COMPUTERS - CURVED HERSTART",
+      "projectoren aan": "PROJECTOREN - CURVED AAN",
+      "projectoren uit": "PROJECTOREN - CURVED UIT"
+    },
+    {
+      "naam": "interactief",
+      "computers aan": "COMPUTERS - INTERACTIEF AAN",
+      "computers uit": "COMPUTERS - INTERACTIEF UIT",
+      "computers herstart": "COMPUTERS - INTERACTIEF HERSTART",
+      "projectoren aan": "PROJECTOREN - INTERACTIEF AAN",
+      "projectoren uit": "PROJECTOREN - INTERACTIEF UIT"
+    },
+    {
+      "naam": "kaleidoscoop",
+      "computers aan": "COMPUTERS - KALEIDOSCOOP AAN",
+      "computers uit": "COMPUTERS - KALEIDOSCOOP UIT",
+      "computers herstart": "COMPUTERS - KALEIDOSCOOP HERSTART",
+      "projectoren aan": "PROJECTOREN - KALEIDOSCOOP AAN",
+      "projectoren uit": "PROJECTOREN - KALEIDOSCOOP UIT"
+    },
+    {
+      "naam": "carrousel",
+      "computers aan": "COMPUTERS - CARROUSEL AAN",
+      "computers uit": "COMPUTERS - CARROUSEL UIT",
+      "computers herstart": "COMPUTERS - CARROUSEL HERSTART",
+      "projectoren aan": "PROJECTOREN - CARROUSEL AAN",
+      "projectoren uit": "PROJECTOREN - CARROUSEL UIT"
+    },
+    {
+      "naam": "ledtunnel",
+      "computers aan": "COMPUTERS - LEDTUNNEL AAN",
+      "computers uit": "COMPUTERS - LEDTUNNEL UIT",
+      "computers herstart": "COMPUTERS - LEDTUNNEL HERSTART",
+      "projectoren aan": "PROJECTOREN - LEDTUNNEL AAN",
+      "projectoren uit": "PROJECTOREN - LEDTUNNEL UIT"
+    },
+    {
+      "naam": "alle computers",
+      "computers aan": "COMPUTERS - AAN",
+      "computers uit": "COMPUTERS - UIT",
+      "computers herstart": "COMPUTERS - HERSTART"
+    }
+  ],
+  "homescherm": [
     {
       "naam": "alles aan",
-      "categorie": "opstarten / afsluiten",
       "task": "ALLES AAN",
-      "scherm": "1",
-      "functie": "aan"
+      "id": "on"
     },
     {
       "naam": "alles uit",
-      "categorie": "opstarten / afsluiten",
       "task": "ALLES UIT",
-      "scherm": "1",
-      "functie": "uit"
+      "id": "off"
     },
     {
       "naam": "noodstop",
-      "categorie": "",
-      "task": "",
-      "scherm": "1",
-      "functie": "noodstop"
-    },
-
-    { "_comment": "---scherm 2 functies---" },
-    
-    { "_comment": "---computers---" },
-    
-    {
-      "naam": "zwembad aan",
-      "categorie": "computers",
-      "task": "COMPUTERS - ZWEMBAD AAN",
-      "scherm": "2",
-      "functie": "aan"
-    },
-    {
-      "naam": "zwembad uit",
-      "categorie": "computers",
-      "task": "COMPUTERS - ZWEMBAD UIT",
-      "scherm": "2",
-      "functie": "uit"
-    },
-    {
-      "naam": "curved aan",
-      "categorie": "computers",
-      "task": "COMPUTERS - CURVED AAN",
-      "scherm": "2",
-      "functie": "aan"
-    },
-    {
-      "naam": "curved uit",
-      "categorie": "computers",
-      "task": "COMPUTERS - CURVED UIT",
-      "scherm": "2",
-      "functie": "uit"
-    },
-    {
-      "naam": "interactief aan",
-      "categorie": "computers",
-      "task": "COMPUTERS - INTERACTIEF AAN",
-      "scherm": "2",
-      "functie": "aan"
-    },
-    {
-      "naam": "interactief uit",
-      "categorie": "computers",
-      "task": "COMPUTERS - INTERACTIEF UIT",
-      "scherm": "2",
-      "functie": "uit"
-    },
-    {
-      "naam": "kaleidoscoop aan",
-      "categorie": "computers",
-      "task": "COMPUTERS - KALEIDOSCOOP AAN",
-      "scherm": "2",
-      "functie": "aan"
-    },
-    {
-      "naam": "kaleidoscoop uit",
-      "categorie": "computers",
-      "task": "COMPUTERS - KALEIDOSCOOP UIT",
-      "scherm": "2",
-      "functie": "uit"
-    },
-
-    { "_comment": "---projectoren functies---" },
-    
-    {
-      "naam": "zwembad aan",
-      "categorie": "projectoren",
-      "task": "PROJECTOREN - ZWEMBAD AAN",
-      "scherm": "2",
-      "functie": "aan"
-    },
-    {
-      "naam": "zwembad uit",
-      "categorie": "projectoren",
-      "task": "PROJECTOREN - ZWEMBAD UIT",
-      "scherm": "2",
-      "functie": "uit"
-    },
-    {
-      "naam": "curved aan",
-      "categorie": "projectoren",
-      "task": "PROJECTOREN - CURVED AAN",
-      "scherm": "2",
-      "functie": "aan"
-    },
-    {
-      "naam": "curved uit",
-      "categorie": "projectoren",
-      "task": "PROJECTOREN - CURVED UIT",
-      "scherm": "2",
-      "functie": "uit"
-    },
-    {
-      "naam": "interactief aan",
-      "categorie": "projectoren",
-      "task": "PROJECTOREN - INTERACTIEF AAN",
-      "scherm": "2",
-      "functie": "aan"
-    },
-    {
-      "naam": "interactief uit",
-      "categorie": "projectoren",
-      "task": "PROJECTOREN - INTERACTIEF UIT",
-      "scherm": "2",
-      "functie": "uit"
-    },
-    {
-      "naam": "kaleidoscoop aan",
-      "categorie": "projectoren",
-      "task": "PROJECTOREN - KALEIDOSCOOP AAN",
-      "scherm": "2",
-      "functie": "aan"
-    },
-    {
-      "naam": "kaleidoscoop uit",
-      "categorie": "projectoren",
-      "task": "PROJECTOREN - KALEIDOSCOOP UIT",
-      "scherm": "2",
-      "functie": "uit"
-    },
-
-    { "_comment": "---scherm 2 functies---" },
-
-    {
-      "naam": "led tunnel aan",
-      "categorie": "opstarten / afsluiten",
-      "task": "LEDTUNNEL AAN",
-      "scherm": "2"
-    },
-    {
-      "naam": "led tunnel uit",
-      "categorie": "opstarten / afsluiten",
-      "task": "LED TUNNEL UIT",
-      "scherm": "2"
-    },
-    {
-      "naam": "led tunnel aan",
-      "categorie": "opstarten / afsluiten",
-      "task": "LEDTUNNEL AAN",
-      "scherm": "2"
-    },
-    {
-      "naam": "led tunnel uit",
-      "categorie": "opstarten / afsluiten",
-      "task": "LED TUNNEL UIT",
-      "scherm": "2"
-    },
-    { "_comment": "---scherm 3 functies---" },
-    {
-      "naam": "led tunnel uit",
-      "categorie": "opstarten / afsluiten",
-      "task": "LED TUNNEL UIT",
-      "scherm": "3"
+      "task": "-",
+      "id": "stop"
     }
   ]
 }
