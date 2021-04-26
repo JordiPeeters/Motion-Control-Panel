@@ -1,5 +1,7 @@
 body {
-  font-family: "Archivo";
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
   height: 100vh;
   background-image: url("background.jpg");
@@ -7,6 +9,7 @@ body {
   width: 100%;
   margin: 0px;
   /* overflow: hidden; */
+  text-transform: uppercase;
 }
 #navbar {
   display: flex;
@@ -25,6 +28,9 @@ body {
   margin: 3vh 15vw 5vh 15vw;
   background-color: #fff;
 }
+.icons:hover{
+  cursor: pointer;
+}
 
 .fas {
   background: #9c47fc;
@@ -33,23 +39,32 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+button{
+  font-family: montserrat, sans-serif;
+  font-weight:600;
+  font-style: normal;
+  text-transform: uppercase;
+  border: 0px;
+}
+
 #onoffbuttonsHome {
   height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh;
+  padding: 5vh;
 }
 
 .buttonHome {
   width: 30vw;
   height: 20vh;
-  margin: 5vh;
+  margin: 3vh;
   text-align: center;
   border-radius: 25px;
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.05);
   color: white;
-  font-size: 450%;
+  font-size: 400%;
+  border: 0px;
 }
 
 .buttonHome:hover {
@@ -103,9 +118,43 @@ body {
   transition: 0.2s ease;
 }
 
+#stop{
+  background-color: yellow;
+  background-image: url("panicbutton.png");
+  transition: 0.2s ease;
+}
+
 #buttonText {
   top: 50%; /* 3 */
   transform: translate(0, -50%); /* 4 */
+}
+
+/* advanced screen */
+#advancedscreen{
+  display: none;
+}
+
+.category{
+  margin: 10px;
+  width: 30vw;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.category button{
+  width: 45%;
+  height: 7vh;
+  margin: 10px;
+}
+
+.onbutton{
+  background-color: rgb(76, 247, 76);
+}
+.offbutton{
+  background-color: rgb(247, 76, 76);
+}
+
+#category1{
+ 
 }
 
 /* clock */
