@@ -53,6 +53,10 @@
       "computers aan": "COMPUTERS - AAN",
       "computers uit": "COMPUTERS - UIT",
       "computers herstart": "COMPUTERS - HERSTART"
+    },
+    {
+      "naam": "uitlijngrid",
+      "uitlijngrid aan": "UITLIJNGRID"
     }
   ],
   "homescherm": [
@@ -70,6 +74,11 @@
       "naam": "noodstop",
       "task": "-",
       "id": "stop"
+    },
+    {
+      "naam": "start show",
+      "task": "START SHOW",
+      "id": "cue"
     }
   ]
 }

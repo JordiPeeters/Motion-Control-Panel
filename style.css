@@ -47,6 +47,12 @@ button {
   text-transform: uppercase;
   border: 0px;
 }
+button:hover{
+  cursor: pointer;
+}
+button:active{
+  background-color: gray;
+}
 
 /* ??? */
 #homescreen {
@@ -135,6 +141,7 @@ button {
   width: 15vw;
   height: 15vw;
   margin: 10px;
+  border-radius: 10%;
 }
 
 .installationscreen {
@@ -159,6 +166,18 @@ button {
   height: 10vh;
 }
 
+.categoryDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  /* background-color: rgb(245, 245, 245); */
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 1px;
+  padding: 10px;
+}
+
 .closebutton {
   font-size: 40px;
   position: fixed;
@@ -172,8 +191,11 @@ button {
 }
 
 .onoffbutton {
+  background-color: rgb(188, 213, 243);
   margin: 10px;
   height: 10vh;
+  min-width: 15vw;
+  border-radius: 10px;
 }
 
 /* clock */
@@ -183,13 +205,13 @@ button {
   bottom: 10vh;
   right: 5vw;
   display: flex;
-  height: 10vh;
+  /* height: 10vh; */
   align-items: center;
   flex-direction: column;
-  min-width: 350px;
+  min-width: 300px;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  padding-top: 10px;
+  padding:  10px 0px 10px 0px;
 }
 
 .colon {
@@ -204,4 +226,19 @@ span {
   color: #fff;
   text-shadow: 2px 2px #000;
   font-weight: 700;
+}
+
+
+/* local storage button */
+#readlocalstorage{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 40px; 
+}
+#clearlocalstorage{
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  height: 40px; 
 }

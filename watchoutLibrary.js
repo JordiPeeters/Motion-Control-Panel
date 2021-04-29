@@ -31,7 +31,7 @@ const WO = (function () {
 const send = (message) => {
   try {
     var response = WOsocket.send(message);
-    console.log("Sent : " + message);
+    console.log("Sent: " + message);
   } catch (exception) {
     console.log(exception);
   }
