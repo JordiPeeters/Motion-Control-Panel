@@ -1,4 +1,4 @@
-var host = "ws://127.0.0.1:3040";
+var host = "ws://127.0.0.1:5050";
 var WOsocket = new WebSocket(host);
 
 WOsocket.onopen = function () {
