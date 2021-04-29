@@ -5,7 +5,7 @@ const homePage = document.getElementById("homescreen");
 const buttonAndQuestion = document.getElementsByClassName("buttonandquestion");
 
 let buttonPressFloat = 0;
-if (localStorage.buttonpress !== null) {
+if (localStorage.buttonpress !== undefined) {
   buttonPressFloat = localStorage.buttonpress;
 } else {
   localStorage.buttonpress = 0;
@@ -13,7 +13,8 @@ if (localStorage.buttonpress !== null) {
 
 let currentScreen;
 
-// create buttons from json
+// page setup
+// __________
 const createButtons = (data) => {
   homeFunctions = data.homescherm.slice();
   installaties = data.installaties.slice();
@@ -30,22 +31,35 @@ const createButtons = (data) => {
   });
 };
 
+// buttons for home screen
+//________________________
 const createHomeScreen = (tasks) => {
   let homeScreenButton = document.createElement("button");
   homeScreenButton.className = "buttonHome";
   homeScreenButton.innerHTML = tasks.naam;
   homeScreenButton.id = tasks.id;
 
-  homeScreenButton.onclick = () => {
-    WO.run(tasks.task);
-    localStorage[buttonPressFloat] = tasks.naam + " pressed";
-    buttonPressFloat++;
-  };
+  if (tasks.id == "cue") {
+    homeScreenButton.onclick = () => {
+      // task
+      WO.gotoControlCue("", tasks.task);
+      // user log
+      userLog(tasks);
+    };
+  } else {
+    homeScreenButton.onclick = () => {
+      // task
+      WO.run(tasks.task);
 
+      // user log
+      userLog(tasks);
+    };
+  }
   homePage.appendChild(homeScreenButton);
 };
 
 // create button per installation
+// ______________________________
 const screen2 = document.getElementById("advancedscreen");
 
 const createButton = (installatie) => {
@@ -57,15 +71,13 @@ const createButton = (installatie) => {
     let screen = document.getElementById(installatie.naam + "screen");
     screen.style.display = "flex";
     currentScreen = screen;
-
-    localStorage.buttonPressFloat = installatie.naam + " pressed";
-    buttonPressFloat++;
   };
 
   screen2.appendChild(installationButton);
 };
 
 // create screen per installation
+// ______________________________
 let createInstallationScreen = (installatie) => {
   // create screen
   let installationScreen = document.createElement("div");
@@ -113,9 +125,13 @@ let createInstallationScreen = (installatie) => {
       onOffButton.className = "onoffbutton";
       onOffButton.innerHTML = key;
       onOffButton.onclick = () => {
+        // task
         WO.run(installatie[key]);
-        localStorage.buttonPressFloat = key + " pressed";
-        buttonPressFloat++;
+
+        // user log
+        userLog(installatie, key);
+        //  localStorage[localStorage.length + 1] = installatie.naam + " - " + key + " pressed";
+        // buttonPressFloat++;
       };
       if (key.includes("computer")) {
         computerDiv.appendChild(onOffButton);
@@ -130,9 +146,29 @@ let createInstallationScreen = (installatie) => {
 };
 
 // on esc close window
+// __________________
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && currentScreen) {
     currentScreen.style.display = "none";
     currentScreen = null;
   }
 });
+
+// userlog function
+// _______________
+
+let localstorageString;
+let timeWhenPressed;
+
+function userLog(tasks, key = "") {
+  if (key != "") {
+    localstorageString = tasks.naam + " - " + key + " pressed";
+  } else {
+    localstorageString = tasks.naam + key + " pressed";
+  }
+  timeWhenPressed =
+    h.toString() + ":" + m.toString() + ":" + s.toString() + ": ";
+
+  localStorage[localStorage.length + 1] = timeWhenPressed + localstorageString;
+  buttonPressFloat++;
+}

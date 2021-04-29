@@ -11,7 +11,7 @@ const WO = (function () {
     send('run "' + timeline + '"\n');
     states[timeline] = true;
   };
-  
+
   const toggleTimeline = (timeline) => {
     if (states[timeline] == true) {
       halt(timeline);
@@ -20,13 +20,17 @@ const WO = (function () {
     }
   };
 
+  function gotoControlCue(timeline, command) {
+    send('gotoControlCue "' + command + '" false ' + timeline + "\n");
+  }
+
   return {
     allesAan: allesAan,
     run: run,
-    toggleTimeline: toggleTimeline
+    toggleTimeline: toggleTimeline,
+    gotoControlCue: gotoControlCue,
   };
 })();
-
 
 const send = (message) => {
   try {
@@ -37,7 +41,6 @@ const send = (message) => {
   }
 };
 
-
 function kill(timeline) {
   send('kill "' + timeline + '"\n');
   states[timeline] = false;
@@ -46,10 +49,6 @@ function kill(timeline) {
 function halt(timeline) {
   send('halt "' + timeline + '"\n');
   states[timeline] = false;
-}
-
-function gotoControlCue(timeline, command) {
-  send('gotoControlCue "' + command + '" false ' + timeline + "\n");
 }
 
 function getStatus(timeline) {

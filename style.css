@@ -14,6 +14,7 @@ body {
 #navbar {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   margin: 0px;
   margin-bottom: 3vh;
   width: 100%;
@@ -21,12 +22,13 @@ body {
   background-color: white;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+  /* padding-left: 7vw;
+  padding-right: 7vw; */
 }
 
 .icons {
   font-size: 100;
-  margin: 10px;
-  margin: 3vh 15vw 5vh 15vw;
+  margin-top: 3vh;
   background-color: #fff;
 }
 .icons:hover {
@@ -142,6 +144,7 @@ button:active{
   height: 15vw;
   margin: 10px;
   border-radius: 10%;
+  background-color: white;
 }
 
 .installationscreen {
@@ -197,6 +200,12 @@ button:active{
   min-width: 15vw;
   border-radius: 10px;
 }
+/* admin screen */
+
+#userlogtext{
+  width: 50vw;
+  height: 50vh;
+}
 
 /* clock */
 
@@ -232,13 +241,13 @@ span {
 /* local storage button */
 #readlocalstorage{
   position: fixed;
-  top: 20px;
+  top: 50px;
   right: 20px;
   height: 40px; 
 }
 #clearlocalstorage{
   position: fixed;
-  top: 80px;
+  top: 130px;
   right: 20px;
   height: 40px; 
 }
