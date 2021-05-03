@@ -4,12 +4,12 @@ let homeFunctions = [];
 const homePage = document.getElementById("homescreen");
 const buttonAndQuestion = document.getElementsByClassName("buttonandquestion");
 
-let buttonPressFloat = 0;
-if (localStorage.buttonpress !== undefined) {
-  buttonPressFloat = localStorage.buttonpress;
-} else {
-  localStorage.buttonpress = 0;
-}
+// let buttonPressFloat = 0;
+// if (localStorage.buttonpress !== undefined) {
+//   buttonPressFloat = localStorage.buttonpress;
+// } else {
+//   localStorage.buttonpress = 0;
+// }
 
 let currentScreen;
 
@@ -169,6 +169,11 @@ function userLog(tasks, key = "") {
   timeWhenPressed =
     h.toString() + ":" + m.toString() + ":" + s.toString() + ": ";
 
+  if (localStorage.length > 5){
+    console.log(localStorage.length);
+    localStorage.shift();
+  }
+
   localStorage[localStorage.length + 1] = timeWhenPressed + localstorageString;
-  buttonPressFloat++;
+  // buttonPressFloat++;
 }

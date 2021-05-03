@@ -33,6 +33,7 @@ loginButton.onclick = () => {
   adminScreen.style.display = "none";
 };
 adminButton.onclick = () => {
+  storageToTextArea();
   document.title = "Admin";
   homePage.style.display = "none";
   advancedScreen.style.display = "none";
@@ -51,15 +52,15 @@ document.getElementById("clearlocalstorage").onclick = () => {
 };
 
 let userLogTextField = document.getElementById("userlogtext");
-let localStorageButton = document.getElementById("localstoragebutton");
-localStorageButton.onclick = () =>{
-    if(userLogTextField.value !== null){
-        userLogTextField.value = null;
+
+const storageToTextArea = () => {
+  if (userLogTextField.value !== null) {
+    userLogTextField.value = null;
+  }
+  for (let i = 0; i - 1 < localStorage.length; i++) {
+    const element = localStorage[i];
+    if (element !== undefined) {
+      userLogTextField.value += element + "\n";
     }
-    for (let i = 0; i - 1 < localStorage.length; i++) {
-        const element = localStorage[i];
-        if(element !== undefined){
-             userLogTextField.value += i + " - "+element + "\n";
-        }
-    }
-}
+  }
+};

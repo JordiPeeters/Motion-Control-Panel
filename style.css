@@ -205,6 +205,7 @@ button:active{
 #userlogtext{
   width: 50vw;
   height: 50vh;
+  margin: 5vw;
 }
 
 /* clock */
