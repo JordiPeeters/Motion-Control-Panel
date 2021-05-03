@@ -167,12 +167,8 @@ function userLog(tasks, key = "") {
     localstorageString = tasks.naam + key + " pressed";
   }
   timeWhenPressed =
-    h.toString() + ":" + m.toString() + ":" + s.toString() + ": ";
+    addzero(h).toString() + ":" + addZero(m).toString() + ":" + addZero(s).toString() + ": ";
 
-  if (localStorage.length > 5){
-    console.log(localStorage.length);
-    localStorage.shift();
-  }
 
   localStorage[localStorage.length + 1] = timeWhenPressed + localstorageString;
   // buttonPressFloat++;
