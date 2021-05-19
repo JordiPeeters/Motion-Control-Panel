@@ -1,4 +1,4 @@
-//
+// fetch json file
 const fetchJSONFile = (path, callback) => {
   var httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
@@ -15,8 +15,8 @@ const fetchJSONFile = (path, callback) => {
 
 // onload roept functie aan die buttons laadt (pageSetup.js)
 window.onload = () => {
-    fetchJSONFile("data.json", function(data){
-        console.log("json loaded");
-        createButtons(data);
-    });
+  fetchJSONFile("data.json", function (data) {
+    console.log("json loaded");
+    createButtons(data);
+  });
 };

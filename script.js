@@ -10,7 +10,7 @@ let advancedScreen = document.getElementById("advancedscreen");
 let loginScreen = document.getElementById("loginscreen");
 let adminScreen = document.getElementById("adminscreen");
 
-//onclicks
+//onclicks page navigation
 homeButton.onclick = () => {
   document.title = "Home";
   homePage.style.display = "flex";
