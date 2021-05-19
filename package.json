@@ -3,15 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "live-server": "^1.2.1",
-    "socket.io": "^4.0.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
-  },
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JordiPeeters/Motion-Control-Panel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JordiPeeters/Motion-Control-Panel/issues"
+  },
+  "homepage": "https://github.com/JordiPeeters/Motion-Control-Panel#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
   }
 }
