@@ -25,21 +25,25 @@ advancedButton.onclick = () => {
   loginScreen.style.display = "none";
   adminScreen.style.display = "none";
 };
-loginButton.onclick = () => {
-  document.title = "Login";
-  homePage.style.display = "none";
-  advancedScreen.style.display = "none";
-  loginScreen.style.display = "flex";
-  adminScreen.style.display = "none";
-};
-adminButton.onclick = () => {
-  storageToTextArea();
-  document.title = "Admin";
-  homePage.style.display = "none";
-  advancedScreen.style.display = "none";
-  loginScreen.style.display = "none";
-  adminScreen.style.display = "flex";
-};
+if (adminButton != null){
+  adminButton.onclick = () => {
+    storageToTextArea();
+    document.title = "Admin";
+    homePage.style.display = "none";
+    advancedScreen.style.display = "none";
+    loginScreen.style.display = "none";
+    adminScreen.style.display = "flex";
+  };
+} 
+if (loginButton != null){
+  loginButton.onclick = () => {
+    document.title = "Login";
+    homePage.style.display = "none";
+    advancedScreen.style.display = "none";
+    loginScreen.style.display = "flex";
+    adminScreen.style.display = "none";
+  };
+}
 
 // localstorage
 
@@ -47,8 +51,11 @@ adminButton.onclick = () => {
 //   console.log(localStorage);
 // };
 document.getElementById("clearlocalstorage").onclick = () => {
-  console.log("clear local storage");
-  localStorage.clear();
+  if (confirm("Clear user log?")) {
+    console.log("clear local storage");
+    localStorage.clear();
+    storageToTextArea();
+  }
 };
 
 let userLogTextField = document.getElementById("userlogtext");

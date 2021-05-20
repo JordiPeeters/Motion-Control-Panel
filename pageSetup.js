@@ -117,6 +117,16 @@ let createInstallationScreen = (installatie) => {
   projectorDivTitle.innerHTML = "projectoren";
   projectorDiv.appendChild(projectorDivTitle);
 
+  // add divs per category: other
+  let otherDiv = document.createElement("div");
+  otherDiv.className = "categoryDiv";
+  installationScreen.appendChild(otherDiv);
+
+  let otherDivTitle = document.createElement("p");
+  otherDivTitle.innerHTML = "other";
+  otherDiv.appendChild(otherDivTitle);
+
+
 
   // for each element per installation create buttons for each function
   Object.keys(installatie).forEach((key) => {
@@ -135,8 +145,10 @@ let createInstallationScreen = (installatie) => {
       };
       if (key.includes("computer")) {
         computerDiv.appendChild(onOffButton);
-      } else {
+      } else if (key.includes("projector")){
         projectorDiv.appendChild(onOffButton);
+      }else{
+        otherDiv.appendChild(onOffButton);
       }
     }
   });

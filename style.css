@@ -10,14 +10,37 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-style: normal;
-
   height: 100vh;
   background-image: url("background.jpg");
   background-size: cover;
   width: 100%;
   margin: 0px;
-  /* overflow: hidden; */
   text-transform: uppercase;
+  overflow: overlay;
+  user-select: none;
+}
+
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(221, 221, 221); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(175, 175, 175); 
 }
 
 #navbar {
@@ -37,7 +60,6 @@ body {
 
 .icons {
   margin-top: 0.75vh;
-  font-size: 100;
   height: 80%;
 }
 .icons:hover {
@@ -77,8 +99,9 @@ button:active {
   border-radius: 25px;
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.05);
   color: white;
-  font-size: 400%;
+  font-size: 350%;
   border: 0px;
+  transition: 0.2s ease;
 }
 
 .buttonHome:hover {
@@ -94,15 +117,6 @@ button:active {
   flex-direction: row;
 }
 
-.explanation {
-  padding-top: 12vh;
-  color: rgb(231, 231, 231);
-}
-
-.explanation i:hover {
-  cursor: pointer;
-}
-
 #on {
   background: rgb(96, 246, 105);
   background: linear-gradient(
@@ -110,7 +124,6 @@ button:active {
     rgba(96, 246, 105, 1) 32%,
     rgba(1, 173, 43, 1) 87%
   );
-  transition: 0.2s ease;
 }
 
 #off {
@@ -120,18 +133,15 @@ button:active {
     rgba(241, 85, 85, 1) 32%,
     rgba(213, 12, 12, 1) 87%
   );
-  transition: 0.2s ease;
 }
 
 #stop {
   background-color: yellow;
   background-image: url("panicbutton.png");
-  transition: 0.2s ease;
 }
 
-#buttonText {
-  top: 50%; /* 3 */
-  transform: translate(0, -50%); /* 4 */
+#cue{
+  background-color: rgb(53, 208, 243);
 }
 
 /* advanced screen */
@@ -198,8 +208,8 @@ button:active {
   text-align: center;
   margin: 0px;
   color: white;
-  font-size: 35px;
-  font-weight: 900;
+  font-size: 6vh;
+  font-weight: 300;
   width: 100%;
 }
 
