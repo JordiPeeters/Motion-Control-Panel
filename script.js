@@ -43,9 +43,9 @@ adminButton.onclick = () => {
 
 // localstorage
 
-document.getElementById("readlocalstorage").onclick = () => {
-  console.log(localStorage);
-};
+// document.getElementById("readlocalstorage").onclick = () => {
+//   console.log(localStorage);
+// };
 document.getElementById("clearlocalstorage").onclick = () => {
   console.log("clear local storage");
   localStorage.clear();
@@ -63,4 +63,18 @@ const storageToTextArea = () => {
       userLogTextField.value += element + "\n";
     }
   }
+  //scroll to bottom in user log text field, after delay of 10ms
+  setTimeout(() => { userLogTextField.scrollTop = userLogTextField.scrollHeight;  }, 10);
+  
+};
+
+// localstorage size
+var localStorageSpace  = () =>{
+  var allStrings = '';
+  for(var key in window.localStorage){
+      if(window.localStorage.hasOwnProperty(key)){
+          allStrings += window.localStorage[key];
+      }
+  }
+  return allStrings ? 3 + ((allStrings.length*16)/(8*1024)) + ' KB' : 'Empty (0 KB)';
 };

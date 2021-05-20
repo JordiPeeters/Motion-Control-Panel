@@ -11,6 +11,8 @@ let year = document.getElementById("year");
 let h;
 let m;
 let s;
+let d;
+let mon;
 
 //Call the updateTime function every second (1000 milliseconds)
 setInterval(updateTime, 1000);
@@ -24,8 +26,8 @@ function updateTime() {
   h = now.getHours();
   m = now.getMinutes();
   s = now.getSeconds();
-  let d = now.getDate();
-  let mon = now.getMonth() + 1;
+  d = now.getDate();
+  mon = now.getMonth() + 1;
   let y = now.getFullYear();
 
   //Add the date and time data to the page

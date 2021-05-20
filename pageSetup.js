@@ -77,13 +77,28 @@ let createInstallationScreen = (installatie) => {
   installationScreen.className = "installationscreen";
   installationScreen.id = installatie.naam + "screen";
   installationScreen.style.display = "none";
-
+  
   // create title for screen
+  let screenTitleDiv = document.createElement("div");
+  screenTitleDiv.className= "screentitlediv";
+  screenTitleDiv.onclick = () => {
+    document.getElementById(installatie.naam + "screen").style.display = "none";
+  };
+  
   let screenTitle = document.createElement("p");
   screenTitle.innerHTML = installatie.naam;
   screenTitle.className = "screentitle";
-  installationScreen.appendChild(screenTitle);
-
+  screenTitleDiv.appendChild(screenTitle);
+  installationScreen.appendChild(screenTitleDiv);
+  
+  // add close button
+  let closeButton = document.createElement("div");
+  closeButton.className = "closebutton";
+  closeButton.id = installatie.naam + "closebutton";
+  closeButton.innerHTML = "+";
+  
+  screenTitleDiv.appendChild(closeButton);
+  
   // add divs per category: computers
   let computerDiv = document.createElement("div");
   computerDiv.className = "categoryDiv";
@@ -102,14 +117,6 @@ let createInstallationScreen = (installatie) => {
   projectorDivTitle.innerHTML = "projectoren";
   projectorDiv.appendChild(projectorDivTitle);
 
-  // add close button
-  let closeButton = document.createElement("div");
-  closeButton.className = "closebutton";
-  closeButton.id = installatie.naam + "closebutton";
-  closeButton.innerHTML = "+";
-  closeButton.onclick = () => {
-    document.getElementById(installatie.naam + "screen").style.display = "none";
-  };
 
   // for each element per installation create buttons for each function
   Object.keys(installatie).forEach((key) => {
@@ -134,7 +141,6 @@ let createInstallationScreen = (installatie) => {
     }
   });
 
-  installationScreen.appendChild(closeButton);
   screen2.appendChild(installationScreen);
 };
 
@@ -160,7 +166,7 @@ function userLog(tasks, key = "") {
     localstorageString = tasks.naam + key + " pressed";
   }
   timeWhenPressed =
-    addZero(h).toString() + ":" + addZero(m).toString() + ":" + addZero(s).toString() + ": ";
+   d.toString()+ "/" + mon.toString() +" - "+ addZero(h).toString() + ":" + addZero(m).toString() + ":" + addZero(s).toString() + " : ";
 
   localStorage[localStorage.length + 1] = timeWhenPressed + localstorageString;
   // buttonPressFloat++;

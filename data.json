@@ -1,4 +1,26 @@
 {
+  "homescherm": [
+    {
+      "naam": "alles aan",
+      "task": "ALLES AAN",
+      "id": "on"
+    },
+    {
+      "naam": "alles uit",
+      "task": "ALLES UIT",
+      "id": "off"
+    },
+    {
+      "naam": "noodstop",
+      "task": "-",
+      "id": "stop"
+    },
+    {
+      "naam": "start show",
+      "task": "START SHOW",
+      "id": "cue"
+    }
+  ],
   "installaties": [
     {
       "naam": "zwembad",
@@ -57,28 +79,6 @@
     {
       "naam": "uitlijngrid",
       "uitlijngrid aan": "UITLIJNGRID"
-    }
-  ],
-  "homescherm": [
-    {
-      "naam": "alles aan",
-      "task": "ALLES AAN",
-      "id": "on"
-    },
-    {
-      "naam": "alles uit",
-      "task": "ALLES UIT",
-      "id": "off"
-    },
-    {
-      "naam": "noodstop",
-      "task": "-",
-      "id": "stop"
-    },
-    {
-      "naam": "start show",
-      "task": "START SHOW",
-      "id": "cue"
     }
   ]
 }
