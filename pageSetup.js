@@ -2,8 +2,6 @@ let jsonData;
 let installaties = [];
 let homeFunctions = [];
 const homePage = document.getElementById("homescreen");
-const buttonAndQuestion = document.getElementsByClassName("buttonandquestion");
-
 let currentScreen;
 
 // page setup
