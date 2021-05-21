@@ -23,12 +23,20 @@ const WO = (function () {
   function gotoControlCue(timeline, command) {
     send('gotoControlCue "' + command + '" false ' + timeline + "\n");
   }
+  function goOnline() {
+    send("online true \n");
+  }
+  function goOffline() {
+    send("online false \n");
+  }
 
   return {
     allesAan: allesAan,
     run: run,
     toggleTimeline: toggleTimeline,
     gotoControlCue: gotoControlCue,
+    goOnline: goOnline,
+    goOffline: goOffline,
   };
 })();
 
@@ -71,9 +79,4 @@ function reset(timeline) {
   send('reset "' + timeline + '"\n');
 }
 
-function goOnline() {
-  send("online true \n");
-}
-function goOffline() {
-  send("online false \n");
-}
+

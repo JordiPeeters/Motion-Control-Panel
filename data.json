@@ -19,6 +19,41 @@
       "naam": "start show",
       "task": "START SHOW",
       "id": "cue"
+    },
+    {
+      "naam": "online / offline",
+      "task": "",
+      "id": "online"
+    }
+  ],
+  "scenes":[
+    {
+      "naam": "lux",
+      "cue": "01"
+    },
+    {
+      "naam": "inmotion",
+      "cue": "03"
+    },
+    {
+      "naam": "elements",
+      "cue": "05"
+    },
+    {
+      "naam": "playground doolhof",
+      "cue": "06"
+    },
+    {
+      "naam": "playground find it",
+      "cue": "07"
+    },
+    {
+      "naam": "playground parcours",
+      "cue": "08"
+    },
+    {
+      "naam": "playground twister",
+      "cue": "09"
     }
   ],
   "installaties": [

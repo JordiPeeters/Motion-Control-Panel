@@ -80,15 +80,34 @@ button:active {
   background-color: gray;
 }
 
-/* ??? */
+/* homescreen */
 #homescreen {
-  height: 85vh;
+ display:flex;
+ width: 100%;
+ justify-content: space-evenly;
+ 
+}
+
+#homescreenbuttonscontainer{
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5vh;
   padding-top: 0px;
   padding-bottom: 0px;
+  height: 85vh;
+  width: 50%;
+}
+#homescreenscenes{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  padding: 5vh;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 85vh;
+  width: 50%;
 }
 
 .buttonHome {
@@ -110,11 +129,6 @@ button:active {
 
 .buttonHome:active {
   width: 29vw;
-}
-
-.buttonandquestion {
-  display: flex;
-  flex-direction: row;
 }
 
 #on {
@@ -142,6 +156,12 @@ button:active {
 
 #cue{
   background-color: rgb(53, 208, 243);
+}
+
+.scenebutton{
+  margin: 2vh;
+  width: 20vh;
+  height: 20vh;
 }
 
 /* advanced screen */

@@ -1,6 +1,7 @@
 let jsonData;
 let installaties = [];
 let homeFunctions = [];
+let scenes = [];
 const homePage = document.getElementById("homescreen");
 let currentScreen;
 
@@ -8,11 +9,17 @@ let currentScreen;
 // __________
 const createButtons = (data) => {
   homeFunctions = data.homescherm.slice();
+  scenes = data.scenes.slice();
   installaties = data.installaties.slice();
 
   // for each element in data.homescherm create button
   homeFunctions.forEach((tasks) => {
     createHomeScreen(tasks);
+  });
+
+  // for eacht element in data.scenes create button
+  scenes.forEach((scene) => {
+    createSceneButtons(scene);
   });
 
   // for each element in data.installaties create button
@@ -24,7 +31,15 @@ const createButtons = (data) => {
 
 // buttons for home screen
 //________________________
+
+var homescreenbuttonscontainer = document.getElementById(
+  "homescreenbuttonscontainer"
+);
+
+var isOnline = false;
 const createHomeScreen = (tasks) => {
+  // buttons
+
   let homeScreenButton = document.createElement("button");
   homeScreenButton.className = "buttonHome";
   homeScreenButton.innerHTML = tasks.naam;
@@ -37,6 +52,18 @@ const createHomeScreen = (tasks) => {
       // user log
       userLog(tasks);
     };
+  } else if (tasks.id == "online") {
+    homeScreenButton.onclick = () => {
+      if (isOnline) {
+        console.log("isonline");
+        WO.goOffline();
+        isOnline = !isOnline;
+      } else {
+        console.log("isonline");
+        WO.goOnline();
+        isOnline = !isOnline;
+      }
+    };
   } else {
     homeScreenButton.onclick = () => {
       // task
@@ -46,7 +73,34 @@ const createHomeScreen = (tasks) => {
       userLog(tasks);
     };
   }
-  homePage.appendChild(homeScreenButton);
+  homescreenbuttonscontainer.appendChild(homeScreenButton);
+};
+
+// create buttons for sceneselection
+
+var homescreenscenes = document.getElementById("homescreenscenes");
+
+const createSceneButtons = (scene) => {
+  // button and text div
+  let sceneButtonAndText = document.createElement("div");
+  sceneButtonAndText.className = "scenebuttonandtext";
+
+  //button
+  let sceneButton = document.createElement("button");
+  sceneButton.className = "scenebutton";
+  sceneButton.innerHTML = scene.cue;
+  sceneButton.onclick = () => {
+    WO.gotoControlCue("", scene.cue);
+  };
+
+  //text
+  let sceneText = document.createElement("p");
+  sceneText.innerHTML = scene.naam;
+
+  //append
+  sceneButtonAndText.appendChild(sceneButton);
+  sceneButtonAndText.appendChild(sceneText);
+  homescreenscenes.appendChild(sceneButtonAndText);
 };
 
 // create button per installation
@@ -75,28 +129,28 @@ let createInstallationScreen = (installatie) => {
   installationScreen.className = "installationscreen";
   installationScreen.id = installatie.naam + "screen";
   installationScreen.style.display = "none";
-  
+
   // create title for screen
   let screenTitleDiv = document.createElement("div");
-  screenTitleDiv.className= "screentitlediv";
+  screenTitleDiv.className = "screentitlediv";
   screenTitleDiv.onclick = () => {
     document.getElementById(installatie.naam + "screen").style.display = "none";
   };
-  
+
   let screenTitle = document.createElement("p");
   screenTitle.innerHTML = installatie.naam;
   screenTitle.className = "screentitle";
   screenTitleDiv.appendChild(screenTitle);
   installationScreen.appendChild(screenTitleDiv);
-  
+
   // add close button
   let closeButton = document.createElement("div");
   closeButton.className = "closebutton";
   closeButton.id = installatie.naam + "closebutton";
   closeButton.innerHTML = "+";
-  
+
   screenTitleDiv.appendChild(closeButton);
-  
+
   // add divs per category: computers
   let computerDiv = document.createElement("div");
   computerDiv.className = "categoryDiv";
@@ -124,8 +178,6 @@ let createInstallationScreen = (installatie) => {
   otherDivTitle.innerHTML = "other";
   otherDiv.appendChild(otherDivTitle);
 
-
-
   // for each element per installation create buttons for each function
   Object.keys(installatie).forEach((key) => {
     if (key !== "naam") {
@@ -143,9 +195,9 @@ let createInstallationScreen = (installatie) => {
       };
       if (key.includes("computer")) {
         computerDiv.appendChild(onOffButton);
-      } else if (key.includes("projector")){
+      } else if (key.includes("projector")) {
         projectorDiv.appendChild(onOffButton);
-      }else{
+      } else {
         otherDiv.appendChild(onOffButton);
       }
     }
@@ -176,7 +228,16 @@ function userLog(tasks, key = "") {
     localstorageString = tasks.naam + key + " pressed";
   }
   timeWhenPressed =
-   d.toString()+ "/" + mon.toString() +" - "+ addZero(h).toString() + ":" + addZero(m).toString() + ":" + addZero(s).toString() + " : ";
+    d.toString() +
+    "/" +
+    mon.toString() +
+    " - " +
+    addZero(h).toString() +
+    ":" +
+    addZero(m).toString() +
+    ":" +
+    addZero(s).toString() +
+    " : ";
 
   localStorage[localStorage.length + 1] = timeWhenPressed + localstorageString;
   // buttonPressFloat++;
