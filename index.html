@@ -6,28 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo"> -->
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="icon2.png"> -->
-    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://use.typekit.net/mdt3xwy.css"> -->
+    <link rel="icon" href="MotionIconRound.png" type="image/gif" sizes="16x16">
 </head>
 
 <body class="body">
-    <!-- <button id="readlocalstorage">read localstorage</button> -->
-    
     <div id="navbar">
         <div class="icons" id="home">
-            <img class = "icons" src="Icons/HomeIcon2.png"></img>
+            <img class="icons" src="Icons/HomeIcon2.png"></img>
         </div>
         <div class="icons" id="advanced">
-            <img class = "icons" src="Icons/InstallationsIcon.png"></img>
+            <img class="icons" src="Icons/InstallationsIcon.png"></img>
         </div>
         <div class="icons" id="admin">
-            <img class = "icons" src="Icons/LogIcon.png"></img>
+            <img class="icons" src="Icons/LogIcon.png"></img>
         </div>
         <!-- <div class="icons" id="login">
             <img class = "icons" src="Icons/LoginIcon.png"></img>
@@ -38,10 +30,12 @@
         <!-- home screen content -->
         <div id="homescreenbuttonscontainer"></div>
         <div id="homescreenscenes">
-            <p>scenes</p>
+            <p id="scenetitle">scenes</p>
+            <div id="scenebuttonscontainer"></div>
         </div>
     </div>
     <div id="advancedscreen">
+        <div id="advancedbuttonscontainer"></div>
         <!-- advanced screen content -->
     </div>
     <div id="adminscreen">
@@ -53,7 +47,12 @@
         <!-- login screen content -->
         <div>loginscherm</div>
     </div>
+
+    <div id="noodstopdiv">
+        <button class="buttonHome" id="noodstopbutton" onclick="Noodstop()">noodstop</button>
+    </div>
     <div id="container">
+        <!-- date and time -->
         <div id="time">
             <span id="hour"></span>
             <span class="colon">:</span>

@@ -5,6 +5,7 @@ let scenes = [];
 const homePage = document.getElementById("homescreen");
 let currentScreen;
 
+
 // page setup
 // __________
 const createButtons = (data) => {
@@ -55,13 +56,13 @@ const createHomeScreen = (tasks) => {
   } else if (tasks.id == "online") {
     homeScreenButton.onclick = () => {
       if (isOnline) {
-        console.log("isonline");
         WO.goOffline();
         isOnline = !isOnline;
+        userLog(tasks);
       } else {
-        console.log("isonline");
         WO.goOnline();
         isOnline = !isOnline;
+        userLog(tasks);
       }
     };
   } else {
@@ -76,9 +77,9 @@ const createHomeScreen = (tasks) => {
   homescreenbuttonscontainer.appendChild(homeScreenButton);
 };
 
-// create buttons for sceneselection
+// create buttons for scene selection
 
-var homescreenscenes = document.getElementById("homescreenscenes");
+var scenebuttonscontainer = document.getElementById("scenebuttonscontainer");
 
 const createSceneButtons = (scene) => {
   // button and text div
@@ -90,6 +91,7 @@ const createSceneButtons = (scene) => {
   sceneButton.className = "scenebutton";
   sceneButton.innerHTML = scene.cue;
   sceneButton.onclick = () => {
+    userLog(scene);
     WO.gotoControlCue("", scene.cue);
   };
 
@@ -100,12 +102,12 @@ const createSceneButtons = (scene) => {
   //append
   sceneButtonAndText.appendChild(sceneButton);
   sceneButtonAndText.appendChild(sceneText);
-  homescreenscenes.appendChild(sceneButtonAndText);
+  scenebuttonscontainer.appendChild(sceneButtonAndText);
 };
 
 // create button per installation
 // ______________________________
-const screen2 = document.getElementById("advancedscreen");
+const screen2 = document.getElementById("advancedbuttonscontainer");
 
 const createButton = (installatie) => {
   // create buttons
@@ -175,7 +177,7 @@ let createInstallationScreen = (installatie) => {
   installationScreen.appendChild(otherDiv);
 
   let otherDivTitle = document.createElement("p");
-  otherDivTitle.innerHTML = "other";
+  otherDivTitle.innerHTML = "overig";
   otherDiv.appendChild(otherDivTitle);
 
   // for each element per installation create buttons for each function
@@ -213,6 +215,15 @@ document.addEventListener("keydown", (event) => {
     currentScreen.style.display = "none";
     currentScreen = null;
   }
+  if(event.key === "1"){
+    GoToHome();
+  }
+  if(event.key === "2"){
+    GoToAdvanced();
+  }
+  if(event.key === "3"){
+    GoToAdmin();
+  }
 });
 
 // userlog function
@@ -222,10 +233,12 @@ let localstorageString;
 let timeWhenPressed;
 
 function userLog(tasks, key = "") {
-  if (key != "") {
+  if (typeof tasks === "string") {
+    localstorageString = tasks + " pressed";
+  } else if (key != "") {
     localstorageString = tasks.naam + " - " + key + " pressed";
   } else {
-    localstorageString = tasks.naam + key + " pressed";
+    localstorageString = tasks.naam + " pressed";
   }
   timeWhenPressed =
     d.toString() +
@@ -240,5 +253,4 @@ function userLog(tasks, key = "") {
     " : ";
 
   localStorage[localStorage.length + 1] = timeWhenPressed + localstorageString;
-  // buttonPressFloat++;
 }

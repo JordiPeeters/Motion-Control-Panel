@@ -1,3 +1,10 @@
+// noodstop function
+
+let Noodstop = () => {
+  WO.gotoControlCue("", "noodstop");
+  userLog("noodstop");
+};
+
 //buttons
 let homeButton = document.getElementById("home");
 let advancedButton = document.getElementById("advanced");
@@ -6,19 +13,19 @@ let adminButton = document.getElementById("admin");
 
 //screens
 let homeScreen = document.getElementById("onoffbuttonsHome");
-let advancedScreen = document.getElementById("advancedscreen");
+let advancedScreen = document.getElementById("advancedbuttonscontainer");
 let loginScreen = document.getElementById("loginscreen");
 let adminScreen = document.getElementById("adminscreen");
 
 //onclicks page navigation
-homeButton.onclick = () => {
+homeButton.onclick = GoToHome =() => {
   document.title = "Home";
   homePage.style.display = "flex";
   advancedScreen.style.display = "none";
   loginScreen.style.display = "none";
   adminScreen.style.display = "none";
 };
-advancedButton.onclick = () => {
+advancedButton.onclick = GoToAdvanced = () => {
   document.title = "Advanced";
   homePage.style.display = "none";
   advancedScreen.style.display = "flex";
@@ -26,7 +33,7 @@ advancedButton.onclick = () => {
   adminScreen.style.display = "none";
 };
 if (adminButton != null){
-  adminButton.onclick = () => {
+  adminButton.onclick = GoToAdmin = () => {
     storageToTextArea();
     document.title = "Admin";
     homePage.style.display = "none";
@@ -47,12 +54,8 @@ if (loginButton != null){
 
 // localstorage
 
-// document.getElementById("readlocalstorage").onclick = () => {
-//   console.log(localStorage);
-// };
 document.getElementById("clearlocalstorage").onclick = () => {
   if (confirm("Clear user log?")) {
-    console.log("clear local storage");
     localStorage.clear();
     storageToTextArea();
   }

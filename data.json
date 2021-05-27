@@ -11,11 +11,6 @@
       "id": "off"
     },
     {
-      "naam": "noodstop",
-      "task": "-",
-      "id": "stop"
-    },
-    {
       "naam": "start show",
       "task": "START SHOW",
       "id": "cue"
@@ -26,7 +21,7 @@
       "id": "online"
     }
   ],
-  "scenes":[
+  "scenes": [
     {
       "naam": "lux",
       "cue": "01"

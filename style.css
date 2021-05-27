@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url("Montserrat/Montserrat-Medium.ttf") format('truetype');
+  src: url("Montserrat/Montserrat-Medium.ttf") format("truetype");
   /* unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; */
 }
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-style: normal;
   height: 100vh;
@@ -22,27 +22,28 @@ body {
 
 /* scrollbar */
 
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
+  height: 11px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0);
 }
- 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: rgb(221, 221, 221); 
+  background: rgb(221, 221, 221);
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(175, 175, 175); 
+  background: rgb(175, 175, 175);
+}
+::-webkit-scrollbar-corner {
+  background: rgba(255, 255, 255, 0);
 }
 
+/* navbar */
 #navbar {
   display: flex;
   flex-direction: row;
@@ -77,28 +78,47 @@ button:hover {
   cursor: pointer;
 }
 button:active {
-  background-color: gray;
+  background-color: rgb(143, 193, 236);;
+}
+
+/* noodstop */
+#noodstopdiv {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#noodstopbutton {
+  width: 30vw;
+  height: 10vh;
+  background-color: yellow;
+  background-image: url("panicbutton.png");
+}
+
+#noodstopbutton:active {
+  width: 28vw;
 }
 
 /* homescreen */
 #homescreen {
- display:flex;
- width: 100%;
- justify-content: space-evenly;
- 
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  /* height: 70%; */
 }
 
-#homescreenbuttonscontainer{
+#homescreenbuttonscontainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5vh;
-  padding-top: 0px;
   padding-bottom: 0px;
-  height: 85vh;
+  height: 70vh;
   width: 50%;
 }
-#homescreenscenes{
+#homescreenscenes {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -106,19 +126,21 @@ button:active {
   padding: 5vh;
   padding-top: 0px;
   padding-bottom: 0px;
-  height: 85vh;
+  height: 70vh;
   width: 50%;
+  color: white;
 }
 
 .buttonHome {
-  width: 30vw;
+  width: 31vw;
   height: 20vh;
   margin: 3vh;
   text-align: center;
   border-radius: 25px;
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.05);
   color: white;
-  font-size: 350%;
+  background-color: rgb(195, 224, 250);
+  font-size: 3vw;
   border: 0px;
   transition: 0.2s ease;
 }
@@ -128,7 +150,7 @@ button:active {
 }
 
 .buttonHome:active {
-  width: 29vw;
+  width: 30vw;
 }
 
 #on {
@@ -149,33 +171,56 @@ button:active {
   );
 }
 
-#stop {
-  background-color: yellow;
-  background-image: url("panicbutton.png");
-}
-
-#cue{
+#cue {
   background-color: rgb(53, 208, 243);
 }
 
-.scenebutton{
-  margin: 2vh;
-  width: 20vh;
-  height: 20vh;
+/* scenes */
+#scenetitle {
+  margin-left: 45%;
+  font-size: 4vh;
+}
+
+#scenebuttonscontainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 5vh;
+  height: 50vh;
+  width: 100%;
+  overflow: scroll;
+}
+
+.scenebuttonandtext {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1vw;
+}
+
+.scenebutton {
+  margin: 1vh;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 10%;
 }
 
 /* advanced screen */
-#advancedscreen {
+#advancedbuttonscontainer {
   display: none;
   flex-wrap: wrap;
   align-content: flex-start;
   padding: 10px;
+  height: 65vh;
+  width: 98vw;
+  overflow: scroll;
 }
 
 .installationbutton {
-  width: 15vw;
-  height: 15vw;
-  margin: 10px;
+  font-size: 1vw;
+  width: 13vw;
+  height: 13vw;
+  margin: 1.5vw;
   border-radius: 10%;
   background-color: white;
 }
@@ -228,7 +273,7 @@ button:active {
   text-align: center;
   margin: 0px;
   color: white;
-  font-size: 6vh;
+  font-size: 2.2vw;
   font-weight: 300;
   width: 100%;
 }
@@ -252,7 +297,7 @@ button:active {
 }
 /* admin screen */
 
-#adminscreen{
+#adminscreen {
   display: none;
 }
 
@@ -264,7 +309,7 @@ button:active {
 
 /* login screen */
 
-#loginscreen{
+#loginscreen {
   display: none;
 }
 
@@ -272,8 +317,8 @@ button:active {
 
 #container {
   position: fixed;
-  bottom: 10vh;
-  right: 5vw;
+  bottom: 5vh;
+  right: 2.5vw;
   display: flex;
   /* height: 10vh; */
   align-items: center;
@@ -310,4 +355,6 @@ span {
   top: 130px;
   right: 20px;
   height: 40px;
+  border-radius: 10px;
+  padding: 10px;
 }
