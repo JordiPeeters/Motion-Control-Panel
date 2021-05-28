@@ -4,7 +4,6 @@
   font-weight: 100;
   font-display: swap;
   src: url("Montserrat/Montserrat-Medium.ttf") format("truetype");
-  /* unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; */
 }
 body {
   font-family: "Montserrat", sans-serif;
@@ -93,8 +92,10 @@ button:active {
 #noodstopbutton {
   width: 30vw;
   height: 10vh;
-  background-color: yellow;
-  background-image: url("panicbutton.png");
+  background-color: white;
+  color: red;
+  /* background-image: url("panicbutton.png"); */
+  background-size: cover;
 }
 
 #noodstopbutton:active {
@@ -123,6 +124,7 @@ button:active {
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 5vh;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -152,6 +154,9 @@ button:active {
 .buttonHome:active {
   width: 30vw;
 }
+#online:active{
+  background-color: rgb(195, 224, 250);
+}
 
 #on {
   background: rgb(96, 246, 105);
@@ -177,7 +182,6 @@ button:active {
 
 /* scenes */
 #scenetitle {
-  margin-left: 45%;
   font-size: 4vh;
 }
 
@@ -186,7 +190,8 @@ button:active {
   flex-direction: column;
   flex-wrap: wrap;
   margin: 5vh;
-  height: 50vh;
+  margin-top:0px;
+  height: 60vh;
   width: 100%;
   overflow: scroll;
 }
@@ -199,6 +204,8 @@ button:active {
 }
 
 .scenebutton {
+  font-size: 1vw;
+
   margin: 1vh;
   width: 3vw;
   height: 3vw;
