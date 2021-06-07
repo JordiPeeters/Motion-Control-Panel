@@ -1,0 +1,22 @@
+{
+  "name": "motion-control-panel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JordiPeeters/Motion-Control-Panel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JordiPeeters/Motion-Control-Panel/issues"
+  },
+  "homepage": "https://github.com/JordiPeeters/Motion-Control-Panel#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}

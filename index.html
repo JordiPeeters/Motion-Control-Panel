@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="MotionIconRound.png" type="image/gif" sizes="16x16">
+</head>
+
+<body class="body">
+    <div id="navbar">
+        <div class="icons" id="home">
+            <img class="icons" src="Icons/HomeIcon2.png"></img>
+        </div>
+        <div class="icons" id="advanced">
+            <img class="icons" src="Icons/InstallationsIcon.png"></img>
+        </div>
+        <div class="icons" id="admin">
+            <img class="icons" src="Icons/LogIcon.png"></img>
+        </div>
+        <!-- <div class="icons" id="login">
+            <img class = "icons" src="Icons/LoginIcon.png"></img>
+        </div> -->
+
+    </div>
+    <div id="homescreen">
+        <!-- home screen content -->
+        <div id="homescreenbuttonscontainer"></div>
+        <div id="homescreenscenes">
+            <p id="scenetitle">scenes</p>
+            <div id="scenebuttonscontainer"></div>
+        </div>
+    </div>
+    <div id="advancedscreen">
+        <div id="advancedbuttonscontainer"></div>
+        <!-- advanced screen content -->
+    </div>
+    <div id="adminscreen">
+        <!-- admin screen content -->
+        <textarea id="userlogtext" readonly></textarea>
+        <button id="clearlocalstorage">verwijder user log</button>
+    </div>
+    <div id="loginscreen">
+        <!-- login screen content -->
+        <div>loginscherm</div>
+    </div>
+
+    <div id="noodstopdiv">
+        <button class="buttonHome" id="noodstopbutton" onclick="Noodstop()">noodstop</button>
+    </div>
+    <div id="container">
+        <!-- date and time -->
+        <div id="time">
+            <span id="hour"></span>
+            <span class="colon">:</span>
+            <span id="minute"></span>
+            <span class="colon">:</span>
+            <span id="seconds"></span>
+        </div>
+        <div id="date">
+            <span id="day"></span>
+            <span>-</span>
+            <span id="month"></span>
+            <span>-</span>
+            <span id="year"></span>
+        </div>
+    </div>
+</body>
+<script src="watchoutsockets.js"></script>
+<script src="watchoutLibrary.js"></script>
+<script src="pageSetup.js"></script>
+<script src="loadJson.js"></script>
+<script src="clock.js"></script>
+<script src="script.js"></script>
+
+</html>
