@@ -8,8 +8,13 @@ WOsocket.onopen = function () {
 
 WOsocket.onmessage = function (msg) {
   console.log("Received: " + msg.data);
+  console.log(msg);
 };
 
 WOsocket.onclose = function () {
   console.log("Socket Status: " + WOsocket.readyState + " (Closed)");
+};
+
+WOsocket.onerror = function (event){
+  alert("Geen verbinding met Watchout, open Watchout en refresh pagina");
 };
