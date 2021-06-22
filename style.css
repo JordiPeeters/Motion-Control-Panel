@@ -351,12 +351,6 @@ span {
 }
 
 /* local storage button */
-#readlocalstorage {
-  position: fixed;
-  top: 50px;
-  right: 20px;
-  height: 40px;
-}
 #clearlocalstorage {
   position: fixed;
   top: 130px;
@@ -364,4 +358,36 @@ span {
   height: 40px;
   border-radius: 10px;
   padding: 10px;
+  width: 180px;
+}
+#localstoragecapacity{
+  color: white;
+  font-size: 13px;
+  position: fixed;
+  top: 200px;
+  right: 20px;
+}
+
+#bar{
+  width: 180px;
+  background-color: rgba(66, 66, 66, 0.109);
+  border-radius: 20px;
+}
+
+#progresstext{
+  display: flex;
+  position:absolute;
+  margin: 0px;
+  width: 100%;
+  justify-content: center;
+}
+#progresstext p{
+  margin:0px;
+}
+
+#progress{
+  border-radius: 20px;
+  height: 20px;
+  width:50%;
+  background-color: rgba(255, 140, 255, 0.741);
 }

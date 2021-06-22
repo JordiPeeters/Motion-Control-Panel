@@ -62,6 +62,8 @@ document.getElementById("clearlocalstorage").onclick = () => {
 };
 
 let userLogTextField = document.getElementById("userlogtext");
+let progressbar = document.getElementById("progress");
+let progresstext = document.getElementById("progresstext");
 
 const storageToTextArea = () => {
   if (userLogTextField.value !== null) {
@@ -76,6 +78,22 @@ const storageToTextArea = () => {
   //scroll to bottom in user log text field, after delay of 10ms
   setTimeout(() => { userLogTextField.scrollTop = userLogTextField.scrollHeight;  }, 10);
   
+
+  let storageprogress = localStorageSpace() / 5000;
+
+  if (Number.isNaN(storageprogress)){
+    progressbar.style.width = "0%";
+  progresstext.innerHTML = "0%";
+  }
+  else{
+    progresstext.innerHTML = storageprogress.toFixed(4) + "%";
+    if(storageprogress<2){
+      progressbar.style.width = "2%";
+    } else{
+      progressbar.style.width = storageprogress.toFixed(4) + "%";
+    }
+  }
+  console.log(storageprogress);
 };
 
 // localstorage size
@@ -86,5 +104,5 @@ var localStorageSpace  = () =>{
           allStrings += window.localStorage[key];
       }
   }
-  return allStrings ? 3 + ((allStrings.length*16)/(8*1024)) + ' KB' : 'Empty (0 KB)';
+  return allStrings ? 3 + ((allStrings.length*16)/(8*1024)): 'Empty (0 KB)';
 };
