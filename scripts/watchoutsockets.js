@@ -16,5 +16,5 @@ WOsocket.onclose = function () {
 };
 
 WOsocket.onerror = function (event){
-  alert("Geen verbinding met Watchout, open Watchout en refresh pagina");
+  // alert("Geen verbinding met Watchout, open Watchout en refresh pagina");
 };

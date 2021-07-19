@@ -259,7 +259,7 @@ button:active {
   margin-left: 35%;
   margin-right: 35%;
   background-color: rgba(239, 20, 255, 0.524);
-  border-radius: 50px;
+  border-radius: 1000px;
 }
 .screentitlediv:hover {
   cursor: pointer;
@@ -293,12 +293,15 @@ button:active {
   background-color: rgb(245, 245, 245);
   border-radius: 20px;
   padding: 10px;
+  max-height: 47vh;
+  overflow: scroll;
 }
 
 .onoffbutton {
   background-color: rgb(188, 213, 243);
   margin: 10px;
   height: 10vh;
+  min-height: 4vh;
   min-width: 15vw;
   border-radius: 10px;
 }
@@ -324,10 +327,9 @@ button:active {
 
 #container {
   position: fixed;
-  bottom: 5vh;
-  right: 2.5vw;
+  bottom: 3vh;
+  right: 3vh;
   display: flex;
-  /* height: 10vh; */
   align-items: center;
   flex-direction: column;
   min-width: 300px;
@@ -338,12 +340,11 @@ button:active {
 
 .colon {
   position: relative;
-  /* bottom: 14px; */
 }
 
 span {
   text-align: center;
-  font-size: 30px;
+  font-size: 3vh;
   opacity: 0.7;
   color: #fff;
   text-shadow: 2px 2px #000;

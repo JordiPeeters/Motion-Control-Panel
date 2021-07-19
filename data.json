@@ -16,7 +16,7 @@
       "id": "cue"
     },
     {
-      "naam": "online / offline",
+      "naam": "online gaan",
       "task": "",
       "id": "online"
     }
@@ -58,7 +58,14 @@
       "computers uit": "COMPUTERS - ZWEMBAD UIT",
       "computers herstart": "COMPUTERS - ZWEMBAD HERSTART",
       "projectoren aan": "PROJECTOREN - ZWEMBAD AAN",
-      "projectoren uit": "PROJECTOREN - ZWEMBAD UIT"
+      "projectoren uit": "PROJECTOREN - ZWEMBAD UIT",
+      "computersetstesteststsesettest": "COMPUTERS - ZWEMBAD UIT",
+      "computersetstesteststsesettwest": "COMPUTERS - ZWEMBAD UIT",
+      "computersetstesteststsesettesat": "COMPUTERS - ZWEMBAD UIT",
+      "computersetstesteststseasettwest": "COMPUTERS - ZWEMBAD UIT",
+      "computersetstestestsasdassadadsadasdasdtseasettesat": "COMPUTERS - ZWEMBAD UIT",
+      "computersetstesteststsesdsettwest": "COMPUTERS - ZWEMBAD UIT",
+      "computersetstesteststdsesettesat": "COMPUTERS - ZWEMBAD UIT"
     },
     {
       "naam": "curved",

@@ -5,7 +5,6 @@ let scenes = [];
 const homePage = document.getElementById("homescreen");
 let currentScreen;
 
-
 // page setup
 // __________
 const createButtons = (data) => {
@@ -55,23 +54,28 @@ const createHomeScreen = (tasks) => {
     };
   } else if (tasks.id == "online") {
     homeScreenButton.onclick = () => {
-      if (isOnline) {
-        WO.goOffline();
-        isOnline = !isOnline;
-        userLog(tasks);
-      } else {
-        WO.goOnline();
-        isOnline = !isOnline;
-        userLog(tasks);
+      if (confirm("Offline en weer online gaan?")) {
+        // go offline and online after one second
+        WO.goOffline;
+        setTimeout(function () {
+          WO.goOnline;
+        }, 1000);
       }
     };
   } else {
     homeScreenButton.onclick = () => {
-      // task
-      WO.run(tasks.task);
+      if (tasks.id == "off") {
+        if (confirm("Alles in Motion uit zetten?")) {
+          WO.run(tasks.task);
+          userLog(tasks);
+        }
+      } else {
+        // task
+        WO.run(tasks.task);
 
-      // user log
-      userLog(tasks);
+        // user log
+        userLog(tasks);
+      }
     };
   }
   homescreenbuttonscontainer.appendChild(homeScreenButton);
@@ -215,13 +219,13 @@ document.addEventListener("keydown", (event) => {
     currentScreen.style.display = "none";
     currentScreen = null;
   }
-  if(event.key === "1"){
+  if (event.key === "1") {
     GoToHome();
   }
-  if(event.key === "2"){
+  if (event.key === "2") {
     GoToAdvanced();
   }
-  if(event.key === "3"){
+  if (event.key === "3") {
     GoToAdmin();
   }
 });
