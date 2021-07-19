@@ -18,7 +18,7 @@ const createButtons = (data) => {
     createHomeScreen(tasks);
   });
 
-  // for eacht element in data.scenes create button
+  // for each element in data.scenes create button
   scenes.forEach((scene) => {
     createSceneButtons(scene);
   });
