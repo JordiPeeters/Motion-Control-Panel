@@ -40,14 +40,15 @@
                 <tbody>
                     <?php
                         $data = file_get_contents('members.json');
-                        $data = json_decode($data);
+                        $data = json_decode($data, true);
+                        $installaties = $data['installaties'];
                         $index=0;
-                        foreach($data as $fetch){
+                        foreach($installaties as $fetch){
                     ?>
                         <tr>
-                            <td><?php echo $fetch->name?></td>
-                            <td><?php echo $fetch->function?></td>
-                            <td><?php echo $fetch->command?></td>
+                            <td><?php echo $fetch['name']?></td>
+                            <td><?php echo $fetch['function']?></td>
+                            <td><?php echo $fetch['command']?></td>
                             <td><a class="btn btn-danger" href="delete.php?id=<?php echo $index?>">Delete</a></td>
                         </tr>
                     <?php

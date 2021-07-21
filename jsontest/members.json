@@ -1,12 +1,39 @@
-[
-    {
-        "name": "h",
-        "function": "h",
-        "command": "h"
-    },
-    {
-        "name": "h",
-        "function": "h",
-        "command": "h"
-    }
-]
+{
+    "installaties": [
+        {
+            "name": "v",
+            "function": "v",
+            "command": "v"
+        },
+        {
+            "name": "dd",
+            "function": "d",
+            "command": "d"
+        },
+        {
+            "name": "gg",
+            "function": "gg",
+            "command": "g"
+        },
+        {
+            "name": "gg",
+            "function": "gg",
+            "command": "g"
+        },
+        {
+            "name": "c",
+            "function": "c",
+            "command": "c"
+        },
+        {
+            "name": "d",
+            "function": "d",
+            "command": "d"
+        },
+        {
+            "name": "v",
+            "function": "v",
+            "command": "v"
+        }
+    ]
+}
