@@ -1,39 +1,46 @@
 {
     "installaties": [
         {
-            "name": "v",
-            "function": "v",
-            "command": "v"
-        },
-        {
-            "name": "dd",
-            "function": "d",
-            "command": "d"
-        },
-        {
-            "name": "gg",
-            "function": "gg",
-            "command": "g"
-        },
-        {
-            "name": "gg",
-            "function": "gg",
-            "command": "g"
-        },
-        {
-            "name": "c",
-            "function": "c",
-            "command": "c"
-        },
-        {
             "name": "d",
             "function": "d",
             "command": "d"
         },
         {
-            "name": "v",
-            "function": "v",
-            "command": "v"
+            "name": "2",
+            "function": "2",
+            "command": "2"
+        },
+        {
+            "name": "7",
+            "function": "78",
+            "command": "7"
+        },
+        {
+            "name": "8",
+            "function": "8",
+            "command": "8"
         }
+    ],
+    "homescherm": [
+        {
+            "naam": "alles aan",
+            "task": "ALLES AAN",
+            "id": "on"
+          },
+          {
+            "naam": "alles uit",
+            "task": "ALLES UIT",
+            "id": "off"
+          },
+          {
+            "naam": "start show",
+            "task": "START SHOW",
+            "id": "cue"
+          },
+          {
+            "naam": "online / offline",
+            "task": "",
+            "id": "online"
+          }
     ]
 }
