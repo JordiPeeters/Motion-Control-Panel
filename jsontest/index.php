@@ -14,6 +14,7 @@
         <hr style="border-top:1px dotted #ccc;" />
         <div class="col-md-4">
             <form method="POST" action="insert.php">
+                <label>Aantal functies</label>
             <input type="number" id="aantalfuncties" name="quantity" min="1" max="99" value="1">
                 <button onclick="maaktekstvakken()">kies</button>
 
