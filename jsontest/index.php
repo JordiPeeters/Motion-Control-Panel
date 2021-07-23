@@ -13,10 +13,10 @@
         <h3 class="text-primary">Motion Installaties</h3>
         <hr style="border-top:1px dotted #ccc;" />
         <div class="col-md-4">
-            <form method="POST" action="insert.php">
-                <label>Aantal functies</label>
+            <label>Aantal functies</label>
             <input type="number" id="aantalfuncties" name="quantity" min="1" max="99" value="1">
-                <button onclick="maaktekstvakken()">kies</button>
+            <button onclick="maaktekstvakken()">kies</button>
+            <form method="POST" action="insert.php" id="form">
 
                 <div class="form-group">
                     <label>Naam Installatie</label>
@@ -39,6 +39,11 @@
                     <th>Naam Installatie</th>
                     <th>Functie</th>
                     <th>Task</th>
+                    <th>Task</th>
+                    <th>Task</th>
+                    <th>Task</th>
+                    <th>Task</th>
+                    <th>Task</th>
                 </thead>
                 <tbody>
                     <?php
@@ -57,16 +62,38 @@
                     $data = json_decode($data, true);
                     $installaties = $data['installaties'];
                     $index = 0;
-                    foreach ($installaties as $fetch) {
+                    // for each installatie:
+                    foreach ($installaties as $fetch => $value) {
+                        console_log($installaties);
                     ?>
-                        <tr>
-                            <td><?php echo $fetch['name'] ?></td>
-                            <td><?php echo $fetch['function'] ?></td>
-                            <td><?php echo $fetch['command'] ?></td>
+                        <form method="get" action="edit.php?id=<?php echo $index ?>">
+                            <!-- <td><textarea name='name'><?php echo $fetch['name'] ?></textarea></td> -->
+                            <br>
+                            <?php
+                            // for each key in installaties:
+                            foreach ($value as $key => $jsonvalue) {
+                                // console_log($key);
+                                // console_log($jsonvalue);
+                                if ($key == 'naam') {
+                            ?>
+                                    <tr>
+                                    <td> <input name='<?php echo $key ?>' value='<?php echo $jsonvalue ?>'></input></td>
+                                <?php
+                                } else {
+                                ?>
+                                    <td> <input name='<?php echo $key ?>' value='<?php echo $key ?>'></input></td>
+                                    <td> <input name='<?php echo $key ?>' value='<?php echo $jsonvalue ?>'></input></td>
+                            <?php
+                                }
+                            }
+                            ?>
+                            <input type="hidden" name="id" value="<?php echo $index; ?>" />
+
+                            <td><input type="submit"></td>
                             <td><a class="btn btn-danger" href="delete.php?id=<?php echo $index ?>">Delete</a></td>
                         </tr>
+                        </form>
                     <?php
-                    // console_log($installaties[6]);
                         $index++;
                     }
                     ?>

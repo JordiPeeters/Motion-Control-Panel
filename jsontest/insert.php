@@ -5,16 +5,41 @@
         $json = json_decode($data);
 
         $gegevens = new stdClass;
-        $gegevens->name = $_POST['name'];
-        $gegevens->function = $_POST['function'];
-        $gegevens->command = $_POST['command'];
+        $gegevens->naam = $_POST['name'];
+        // $gegevens->function = $_POST['function'];
+        // $gegevens->command = $_POST['command'];
+
+        $jsonkey = 0;
+        $jsonvalue = 0;
+
+        foreach ($_POST as $key => $value) {
+           if($key != 'insert'){
+               console_log($key);
+                if (str_starts_with( $key, 'funct')){
+                    $value = str_replace(" ", "_", $value);
+                    $jsonkey = $value;
+                    // console_log($jsonkey);
+                }
+                if(str_starts_with( $key, 'command')){
+                    $gegevens->$jsonkey = $value;
+                }
+        }
+            // $gegevens->$key = $value;
+        }
 
         array_push($json->installaties, $gegevens);
 
         $json = json_encode($json, JSON_PRETTY_PRINT);
         file_put_contents('members.json', $json);
-        header('location:index.php');
+        // header('location:index.php');
     }
  
- 
+    function console_log($output, $with_script_tags = true){
+        $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
+            ');';
+        if ($with_script_tags) {
+            $js_code = '<script>' . $js_code . '</script>';
+        }
+        echo $js_code;
+    }
 ?>

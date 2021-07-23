@@ -5,14 +5,7 @@
     $data = json_decode($data, true);
     console_log($data);
     $bannaan = $data;
-
-    // console_log($bannaan[0]);
-    console_log($id);
-    
-    // console_log('console_log($bannaan);');
-    console_log($bannaan);
     unset($bannaan['installaties'][$id]);
-    console_log($bannaan);
 
     $bannaan['installaties'] = array_values($bannaan['installaties']);
     $bannaan = json_encode($bannaan, JSON_PRETTY_PRINT);

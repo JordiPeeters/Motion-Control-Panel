@@ -1,46 +1,115 @@
 {
-    "installaties": [
-        {
-            "name": "d",
-            "function": "d",
-            "command": "d"
-        },
-        {
-            "name": "2",
-            "function": "2",
-            "command": "2"
-        },
-        {
-            "name": "7",
-            "function": "78",
-            "command": "7"
-        },
-        {
-            "name": "8",
-            "function": "8",
-            "command": "8"
-        }
-    ],
     "homescherm": [
-        {
-            "naam": "alles aan",
-            "task": "ALLES AAN",
-            "id": "on"
-          },
-          {
-            "naam": "alles uit",
-            "task": "ALLES UIT",
-            "id": "off"
-          },
-          {
-            "naam": "start show",
-            "task": "START SHOW",
-            "id": "cue"
-          },
-          {
-            "naam": "online / offline",
-            "task": "",
-            "id": "online"
-          }
+      {
+        "naam": "alles aan",
+        "task": "ALLES AAN",
+        "id": "on"
+      },
+      {
+        "naam": "alles uit",
+        "task": "ALLES UIT",
+        "id": "off"
+      },
+      {
+        "naam": "start show",
+        "task": "START SHOW",
+        "id": "cue"
+      },
+      {
+        "naam": "online / offline",
+        "task": "",
+        "id": "online"
+      }
+    ],
+    "scenes": [
+      {
+        "naam": "lux",
+        "cue": "01"
+      },
+      {
+        "naam": "inmotion",
+        "cue": "03"
+      },
+      {
+        "naam": "elements",
+        "cue": "05"
+      },
+      {
+        "naam": "playground doolhof",
+        "cue": "06"
+      },
+      {
+        "naam": "playground find it",
+        "cue": "07"
+      },
+      {
+        "naam": "playground parcours",
+        "cue": "08"
+      },
+      {
+        "naam": "playground twister",
+        "cue": "09"
+      }
+    ],
+    "installaties": [
+      {
+        "naam": "zwembad",
+        "computers aan": "COMPUTERS  ZWEMBAD AAN",
+        "computers uit": "COMPUTERS - ZWEMBAD UIT",
+        "computers herstart": "COMPUTERS - ZWEMBAD HERSTART",
+        "projectoren aan": "PROJECTOREN - ZWEMBAD AAN",
+        "projectoren uit": "PROJECTOREN - ZWEMBAD UIT"
+      },
+      {
+        "naam": "curved",
+        "computers aan": "COMPUTERS - CURVED AAN",
+        "computers uit": "COMPUTERS - CURVED UIT",
+        "computers herstart": "COMPUTERS - CURVED HERSTART",
+        "projectoren aan": "PROJECTOREN - CURVED AAN",
+        "projectoren uit": "PROJECTOREN - CURVED UIT"
+      },
+      {
+        "naam": "interactief",
+        "computers aan": "COMPUTERS - INTERACTIEF AAN",
+        "computers uit": "COMPUTERS - INTERACTIEF UIT",
+        "computers herstart": "COMPUTERS - INTERACTIEF HERSTART",
+        "projectoren aan": "PROJECTOREN - INTERACTIEF AAN",
+        "projectoren uit": "PROJECTOREN - INTERACTIEF UIT"
+      },
+      {
+        "naam": "kaleidoscoop",
+        "computers aan": "COMPUTERS - KALEIDOSCOOP AAN",
+        "computers uit": "COMPUTERS - KALEIDOSCOOP UIT",
+        "computers herstart": "COMPUTERS - KALEIDOSCOOP HERSTART",
+        "projectoren aan": "PROJECTOREN - KALEIDOSCOOP AAN",
+        "projectoren uit": "PROJECTOREN - KALEIDOSCOOP UIT"
+      },
+      {
+        "naam": "carrousel",
+        "computers aan": "COMPUTERS - CARROUSEL AAN",
+        "computers uit": "COMPUTERS - CARROUSEL UIT",
+        "computers herstart": "COMPUTERS - CARROUSEL HERSTART",
+        "projectoren aan": "PROJECTOREN - CARROUSEL AAN",
+        "projectoren uit": "PROJECTOREN - CARROUSEL UIT"
+      },
+      {
+        "naam": "ledtunnel",
+        "computers aan": "COMPUTERS - LEDTUNNEL AAN",
+        "computers uit": "COMPUTERS - LEDTUNNEL UIT",
+        "computers herstart": "COMPUTERS - LEDTUNNEL HERSTART",
+        "projectoren aan": "PROJECTOREN - LEDTUNNEL AAN",
+        "projectoren uit": "PROJECTOREN - LEDTUNNEL UIT"
+      },
+      {
+        "naam": "alle computers",
+        "computers aan": "COMPUTERS - AAN",
+        "computers uit": "COMPUTERS - UIT",
+        "computers herstart": "COMPUTERS - HERSTART"
+      },
+      {
+        "naam": "uitlijngrid",
+        "uitlijngrid aan": "UITLIJNGRID"
+      }
     ]
-}
+  }
+  
