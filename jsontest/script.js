@@ -38,3 +38,9 @@ const maaktekstvakken = () => {
     functieindex++;
   }
 };
+
+
+let moretasks = (id) =>{
+console.log ("yrrt" + id);
+
+}

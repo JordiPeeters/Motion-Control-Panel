@@ -39,11 +39,13 @@
                     <th>Naam Installatie</th>
                     <th>Functie</th>
                     <th>Task</th>
+                    <th>Functie</th>
                     <th>Task</th>
+                    <th>Functie</th>
                     <th>Task</th>
+                    <th>Functie</th>
                     <th>Task</th>
-                    <th>Task</th>
-                    <th>Task</th>
+                    <th>Functie</th>
                 </thead>
                 <tbody>
                     <?php
@@ -64,16 +66,14 @@
                     $index = 0;
                     // for each installatie:
                     foreach ($installaties as $fetch => $value) {
-                        console_log($installaties);
+                        // console_log($installaties);
                     ?>
-                        <form method="get" action="edit.php?id=<?php echo $index ?>">
-                            <!-- <td><textarea name='name'><?php echo $fetch['name'] ?></textarea></td> -->
+                        <form method="get"  action="edit.php?id=<?php echo $index ?>">
+                           
                             <br>
                             <?php
                             // for each key in installaties:
                             foreach ($value as $key => $jsonvalue) {
-                                // console_log($key);
-                                // console_log($jsonvalue);
                                 if ($key == 'naam') {
                             ?>
                                     <tr>
@@ -81,6 +81,7 @@
                                 <?php
                                 } else {
                                 ?>
+                                
                                     <td> <input name='<?php echo $key ?>' value='<?php echo $key ?>'></input></td>
                                     <td> <input name='<?php echo $key ?>' value='<?php echo $jsonvalue ?>'></input></td>
                             <?php
@@ -93,6 +94,8 @@
                             <td><a class="btn btn-danger" href="delete.php?id=<?php echo $index ?>">Delete</a></td>
                         </tr>
                         </form>
+                        <td><button id="moretasks" onclick="moretasks(<?php echo $index ?>)">tasks toevoegen</button>
+
                     <?php
                         $index++;
                     }

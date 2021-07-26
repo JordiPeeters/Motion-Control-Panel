@@ -185,7 +185,7 @@ let createInstallationScreen = (installatie) => {
     if (key !== "naam") {
       let onOffButton = document.createElement("button");
       onOffButton.className = "onoffbutton";
-      onOffButton.innerHTML = key;
+      onOffButton.innerHTML = key.replace("_", " ");
       onOffButton.onclick = () => {
         // task
         WO.run(installatie[key]);
