@@ -53,22 +53,6 @@
     ],
     "installaties": [
         {
-            "naam": "zwembads",
-            "computers aan": "COMPUTERS  ZWEMBAD AAN",
-            "computers uit": "COMPUTERS - ZWEMBAD UIT",
-            "computers herstart": "COMPUTERS - ZWEMBAD HERSTART",
-            "projectoren aan": "PROJECTOREN - ZWEMBAD AAN",
-            "projectoren uit": "PROJECTOREN - ZWEMBAD UIT"
-        },
-        {
-            "naam": "curved",
-            "computers aan": "COMPUTERS - CURVED AAN",
-            "computers uit": "COMPUTERS - CURVED UIT",
-            "computers herstart": "COMPUTERS - CURVED HERSTART",
-            "projectoren aan": "PROJECTOREN - CURVED AAN",
-            "projectoren uit": "PROJECTOREN - CURVED UIT"
-        },
-        {
             "naam": "interactief",
             "computers aan": "COMPUTERS - INTERACTIEF AAN",
             "computers uit": "COMPUTERS - INTERACTIEF UIT",
@@ -107,13 +91,34 @@
             "computers herstart": "COMPUTERS - HERSTART"
         },
         {
-            "naam": "uitlijngrid",
-            "uitlijngrid aan of niet": "UITLIJNGRIDaa"
+            "naam": "zwembads",
+            "computers aan": "COMPUTERS  ZWEMBAD AAN",
+            "computers uit": "COMPUTERS - ZWEMBAD UIT",
+            "computers herstart": "COMPUTERS - ZWEMBAD HERSTART",
+            "projectoren aan": "PROJECTOREN - ZWEMBAD AAN",
+            "projectoren uit": "PROJECTOREN - ZWEMBAD UIT"
+        },
+        {
+            "naam": "curved",
+            "computers aan": "COMPUTERS - CURVED AAN",
+            "computers uit": "COMPUTERS - CURVED UIT",
+            "computers herstart": "COMPUTERS - CURVED HERSTART",
+            "projectoren aan": "PROJECTOREN - CURVED AAN",
+            "projectoren uit": "PROJECTOREN - CURVED UIT"
+        },
+        {
+            "naam": "706",
+            "6": "976"
         },
         {
             "naam": "racebaan",
             "autos aan": "AUTOS AAN",
             "autos uit": "AUTOS UIT"
+        },
+        {
+            "naam": "uitlijngrid",
+            "12321ewqe": "wewqewqeq",
+            "uitlijngrid aan of niet": "UITLIJNGRID"
         }
     ]
 }

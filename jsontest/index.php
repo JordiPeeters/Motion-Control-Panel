@@ -68,16 +68,16 @@
                     foreach ($installaties as $fetch => $value) {
                         // console_log($installaties);
                     ?>
-                        <form method="get"  action="edit.php?id=<?php echo $index ?>">
+                        <form id="form<?php echo $index ?>" method="get"  action="edit.php?id=<?php echo $index ?>">
                            
-                            <br>
+                            <!-- <br> -->
                             <?php
                             // for each key in installaties:
                                 $installatieindex = 0;
                             foreach ($value as $key => $jsonvalue) {
                                 if ($key == 'naam') {
                             ?>
-                                    <tr>
+                                    <tr id="tr<?php echo $index?>">
                                     <td> <input name='<?php echo $key ?>' value='<?php echo $jsonvalue ?>'></input></td>
                                 <?php
                                 } else {
@@ -92,11 +92,11 @@
                             ?>
                             <input type="hidden" name="id" value="<?php echo $index; ?>" />
 
-                            <td><input type="submit"></td>
+                            <td id="insertbutton<?php echo $index?>"><input type="submit"></td>
                             <td><a class="btn btn-danger" href="delete.php?id=<?php echo $index ?>">Delete</a></td>
                         </tr>
-                        <td><button class="moretasks" onclick="moretasks(<?php echo $index ?>)">tasks toevoegen</button>
-                        </form>
+                    </form>
+                    <td><input type="button" class="moretasks" onclick="moretasks(<?php echo $index; echo ','; echo $installatieindex ?>)" value="tasks toevoegen"></input>
 
                     <?php
                         $index++;

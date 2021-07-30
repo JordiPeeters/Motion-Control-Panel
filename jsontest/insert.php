@@ -31,7 +31,7 @@
 
         $json = json_encode($json, JSON_PRETTY_PRINT);
         file_put_contents('members.json', $json);
-        header('location:index.php');
+        // header('location:index.php');
     }
  
     function console_log($output, $with_script_tags = true){

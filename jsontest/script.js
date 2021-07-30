@@ -39,8 +39,33 @@ const maaktekstvakken = () => {
   }
 };
 
+let moretasks = (id, index) => {
+  let trid = "tr" + id;
+  let trparent = document.getElementById(trid);
+  
+  let formid = "form" + id;
+  console.log(formid);
+  let formparent = document.getElementById(formid);
+  console.log(formparent);
 
-let moretasks = (id) =>{
-console.log ("yrrt" + id);
+  let tdfunction = document.createElement("td");
 
-}
+  let tdfunctioninput = document.createElement("input");
+  tdfunctioninput.name = "functie" + index;
+
+  let tdcommand = document.createElement("td");
+
+
+  let tdcommandinput = document.createElement("input");
+  tdcommandinput.name = "command" + index;
+
+  tdfunction.appendChild(tdfunctioninput);
+  tdcommand.appendChild(tdcommandinput);
+
+  let insertbeforebutton = document.getElementById("insertbutton" + id);
+  console.log(insertbeforebutton);
+
+  formparent.appendChild(tdfunction);
+  formparent.appendChild(tdcommand);
+  // trparent.insertBefore(tdcommand, insertbeforebutton);
+};
