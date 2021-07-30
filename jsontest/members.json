@@ -54,61 +54,66 @@
     "installaties": [
         {
             "naam": "zwembads",
-            "computers_aan": "COMPUTERS  ZWEMBAD AAN",
-            "computers_uit": "COMPUTERS - ZWEMBAD UIT",
-            "computers_herstart": "COMPUTERS - ZWEMBAD HERSTART",
-            "projectoren_aan": "PROJECTOREN - ZWEMBAD AAN",
-            "projectoren_uit": "PROJECTOREN - ZWEMBAD UIT"
+            "computers aan": "COMPUTERS  ZWEMBAD AAN",
+            "computers uit": "COMPUTERS - ZWEMBAD UIT",
+            "computers herstart": "COMPUTERS - ZWEMBAD HERSTART",
+            "projectoren aan": "PROJECTOREN - ZWEMBAD AAN",
+            "projectoren uit": "PROJECTOREN - ZWEMBAD UIT"
         },
         {
             "naam": "curved",
-            "computers_aan": "COMPUTERS - CURVED AAN",
-            "computers_uit": "COMPUTERS - CURVED UIT",
-            "computers_herstart": "COMPUTERS - CURVED HERSTART",
-            "projectoren_aan": "PROJECTOREN - CURVED AAN",
-            "projectoren_uit": "PROJECTOREN - CURVED UIT"
+            "computers aan": "COMPUTERS - CURVED AAN",
+            "computers uit": "COMPUTERS - CURVED UIT",
+            "computers herstart": "COMPUTERS - CURVED HERSTART",
+            "projectoren aan": "PROJECTOREN - CURVED AAN",
+            "projectoren uit": "PROJECTOREN - CURVED UIT"
         },
         {
             "naam": "interactief",
-            "computers_aan": "COMPUTERS - INTERACTIEF AAN",
-            "computers_uit": "COMPUTERS - INTERACTIEF UIT",
-            "computers_herstart": "COMPUTERS - INTERACTIEF HERSTART",
-            "projectoren_aan": "PROJECTOREN - INTERACTIEF AAN",
-            "projectoren_uit": "PROJECTOREN - INTERACTIEF UIT"
+            "computers aan": "COMPUTERS - INTERACTIEF AAN",
+            "computers uit": "COMPUTERS - INTERACTIEF UIT",
+            "computers herstart": "COMPUTERS - INTERACTIEF HERSTART",
+            "projectoren aan": "PROJECTOREN - INTERACTIEF AAN",
+            "projectoren uit": "PROJECTOREN - INTERACTIEF UIT"
         },
         {
             "naam": "kaleidoscoop",
-            "computers_aan": "COMPUTERS - KALEIDOSCOOP AAN",
-            "computers_uit": "COMPUTERS - KALEIDOSCOOP UIT",
-            "computers_herstart": "COMPUTERS - KALEIDOSCOOP HERSTART",
-            "projectoren_aan": "PROJECTOREN - KALEIDOSCOOP AAN",
-            "projectoren_uit": "PROJECTOREN - KALEIDOSCOOP UIT"
+            "computers aan": "COMPUTERS - KALEIDOSCOOP AAN",
+            "computers uit": "COMPUTERS - KALEIDOSCOOP UIT",
+            "computers herstart": "COMPUTERS - KALEIDOSCOOP HERSTART",
+            "projectoren aan": "PROJECTOREN - KALEIDOSCOOP AAN",
+            "projectoren uit": "PROJECTOREN - KALEIDOSCOOP UIT"
         },
         {
             "naam": "carrousel",
-            "computers_aan": "COMPUTERS - CARROUSEL AAN",
-            "computers_uit": "COMPUTERS - CARROUSEL UIT",
-            "computers_herstart": "COMPUTERS - CARROUSEL HERSTART",
-            "projectoren_aan": "PROJECTOREN - CARROUSEL AAN",
-            "projectoren_uit": "PROJECTOREN - CARROUSEL UIT"
+            "computers aan": "COMPUTERS - CARROUSEL AAN",
+            "computers uit": "COMPUTERS - CARROUSEL UIT",
+            "computers herstart": "COMPUTERS - CARROUSEL HERSTART",
+            "projectoren aan": "PROJECTOREN - CARROUSEL AAN",
+            "projectoren uit": "PROJECTOREN - CARROUSEL UIT"
         },
         {
             "naam": "ledtunnel",
-            "computers_aan": "COMPUTERS - LEDTUNNEL AAN",
-            "computers_uit": "COMPUTERS - LEDTUNNEL UIT",
-            "computers_herstart": "COMPUTERS - LEDTUNNEL HERSTART",
-            "projectoren_aan": "PROJECTOREN - LEDTUNNEL AAN",
-            "projectoren_uit": "PROJECTOREN - LEDTUNNEL UIT"
+            "computers aan": "COMPUTERS - LEDTUNNEL AAN",
+            "computers uit": "COMPUTERS - LEDTUNNEL UIT",
+            "computers herstart": "COMPUTERS - LEDTUNNEL HERSTART",
+            "projectoren aan": "PROJECTOREN - LEDTUNNEL AAN",
+            "projectoren uit": "PROJECTOREN - LEDTUNNEL UIT"
         },
         {
             "naam": "alle computers",
-            "computers_aan": "COMPUTERS - AAN",
-            "computers_uit": "COMPUTERS - UIT",
-            "computers_herstart": "COMPUTERS - HERSTART"
+            "computers aan": "COMPUTERS - AAN",
+            "computers uit": "COMPUTERS - UIT",
+            "computers herstart": "COMPUTERS - HERSTART"
         },
         {
             "naam": "uitlijngrid",
-            "uitlijngrid_aan": "UITLIJNGRID"
+            "uitlijngrid aan of niet": "UITLIJNGRIDaa"
+        },
+        {
+            "naam": "racebaan",
+            "autos aan": "AUTOS AAN",
+            "autos uit": "AUTOS UIT"
         }
     ]
 }

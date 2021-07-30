@@ -26,7 +26,7 @@
         }
             // $gegevens->$key = $value;
         }
-
+        console_log($json);
         array_push($json->installaties, $gegevens);
 
         $json = json_encode($json, JSON_PRETTY_PRINT);

@@ -15,7 +15,7 @@ const maaktekstvakken = () => {
     functioninput.type = "text";
     functioninput.className = "form-control";
     functioninput.name = "function" + functieindex;
-    functioninput.required = "required";
+    functioninput.required;
 
     // command
     let commandlabel = document.createElement("label");
@@ -25,7 +25,7 @@ const maaktekstvakken = () => {
     taskinput.type = "text";
     taskinput.className = "form-control";
     taskinput.name = "command" + functieindex;
-    taskinput.required = "required";
+    taskinput.required;
 
     // append
     parentdiv.appendChild(functielabel);

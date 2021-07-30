@@ -73,6 +73,7 @@
                             <br>
                             <?php
                             // for each key in installaties:
+                                $installatieindex = 0;
                             foreach ($value as $key => $jsonvalue) {
                                 if ($key == 'naam') {
                             ?>
@@ -82,10 +83,11 @@
                                 } else {
                                 ?>
                                 
-                                    <td> <input name='<?php echo $key ?>' value='<?php echo $key ?>'></input></td>
-                                    <td> <input name='<?php echo $key ?>' value='<?php echo $jsonvalue ?>'></input></td>
+                                    <td> <input name='functie<?php echo $installatieindex ?>' value='<?php echo $key ?>'></input></td>
+                                    <td> <input name='command<?php echo $installatieindex ?>' value='<?php echo $jsonvalue ?>'></input></td>
                             <?php
                                 }
+                                $installatieindex ++;
                             }
                             ?>
                             <input type="hidden" name="id" value="<?php echo $index; ?>" />
@@ -93,8 +95,8 @@
                             <td><input type="submit"></td>
                             <td><a class="btn btn-danger" href="delete.php?id=<?php echo $index ?>">Delete</a></td>
                         </tr>
+                        <td><button class="moretasks" onclick="moretasks(<?php echo $index ?>)">tasks toevoegen</button>
                         </form>
-                        <td><button id="moretasks" onclick="moretasks(<?php echo $index ?>)">tasks toevoegen</button>
 
                     <?php
                         $index++;

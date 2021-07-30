@@ -4,12 +4,11 @@
     $data = file_get_contents('members.json');
     $data = json_decode($data, true);
     console_log($data);
-    $bannaan = $data;
-    unset($bannaan['installaties'][$id]);
+    unset($data['installaties'][$id]);
 
-    $bannaan['installaties'] = array_values($bannaan['installaties']);
-    $bannaan = json_encode($bannaan, JSON_PRETTY_PRINT);
-    file_put_contents('members.json', $bannaan);
+    $data['installaties'] = array_values($data['installaties']);
+    $data = json_encode($data, JSON_PRETTY_PRINT);
+    file_put_contents('members.json', $data);
  
     header('location: index.php');
     
