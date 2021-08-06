@@ -53,30 +53,6 @@
     ],
     "installaties": [
         {
-            "naam": "interactief",
-            "computers aan": "COMPUTERS - INTERACTIEF AAN",
-            "computers uit": "COMPUTERS - INTERACTIEF UIT",
-            "computers herstart": "COMPUTERS - INTERACTIEF HERSTART",
-            "projectoren aan": "PROJECTOREN - INTERACTIEF AAN",
-            "projectoren uit": "PROJECTOREN - INTERACTIEF UIT"
-        },
-        {
-            "naam": "kaleidoscoop",
-            "computers aan": "COMPUTERS - KALEIDOSCOOP AAN",
-            "computers uit": "COMPUTERS - KALEIDOSCOOP UIT",
-            "computers herstart": "COMPUTERS - KALEIDOSCOOP HERSTART",
-            "projectoren aan": "PROJECTOREN - KALEIDOSCOOP AAN",
-            "projectoren uit": "PROJECTOREN - KALEIDOSCOOP UIT"
-        },
-        {
-            "naam": "carrousel",
-            "computers aan": "COMPUTERS - CARROUSEL AAN",
-            "computers uit": "COMPUTERS - CARROUSEL UIT",
-            "computers herstart": "COMPUTERS - CARROUSEL HERSTART",
-            "projectoren aan": "PROJECTOREN - CARROUSEL AAN",
-            "projectoren uit": "PROJECTOREN - CARROUSEL UIT"
-        },
-        {
             "naam": "ledtunnel",
             "computers aan": "COMPUTERS - LEDTUNNEL AAN",
             "computers uit": "COMPUTERS - LEDTUNNEL UIT",
@@ -107,18 +83,50 @@
             "projectoren uit": "PROJECTOREN - CURVED UIT"
         },
         {
-            "naam": "706",
-            "6": "976"
-        },
-        {
-            "naam": "racebaan",
-            "autos aan": "AUTOS AAN",
-            "autos uit": "AUTOS UIT"
-        },
-        {
             "naam": "uitlijngrid",
+            "heuuu": "eeeee",
             "12321ewqe": "wewqewqeq",
             "uitlijngrid aan of niet": "UITLIJNGRID"
+        },
+        {
+            "naam": "706",
+            "6": "976123123123"
+        },
+        {
+            "naam": "interactief",
+            "computers aan": "COMPUTERS - INTERACTIEF AAN",
+            "computers uit": "COMPUTERS - INTERACTIEF UIT",
+            "computers herstart": "COMPUTERS - INTERACTIEF HERSTART",
+            "projectoren aan": "PROJECTOREN - INTERACTIEF AAN",
+            "projectoren uit": "PROJECTOREN - INTERACTIEF UIT"
+        },
+        {
+            "naam": "interactief",
+            "computers aan": "COMPUTERS - INTERACTIEF AAN",
+            "computers uit": "COMPUTERS - INTERACTIEF UIT",
+            "computers herstart": "COMPUTERS - INTERACTIEF HERSTART",
+            "projectoren aan": "PROJECTOREN - INTERACTIEF AAN",
+            "projectoren uit": "PROJECTOREN - INTERACTIEF UIT"
+        },
+        {
+            "naam": "706"
+        },
+        {
+            "naam": "banaaaaan",
+            "aan": "AAAAN"
+        },
+        {
+            "naam": "706",
+            "asds": "sada",
+            "asdnjasdnjk": "adsnjkdasnj"
+        },
+        {
+            "naam": "706",
+            "12312": "aayayaa",
+            "": ""
+        },
+        {
+            "naam": "123213"
         }
     ]
 }

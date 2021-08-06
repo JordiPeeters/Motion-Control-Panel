@@ -40,11 +40,8 @@ const maaktekstvakken = () => {
 };
 
 let moretasks = (id, index) => {
-  let trid = "tr" + id;
-  let trparent = document.getElementById(trid);
-  
+  // get form id
   let formid = "form" + id;
-  console.log(formid);
   let formparent = document.getElementById(formid);
   console.log(formparent);
 
@@ -55,7 +52,6 @@ let moretasks = (id, index) => {
 
   let tdcommand = document.createElement("td");
 
-
   let tdcommandinput = document.createElement("input");
   tdcommandinput.name = "command" + index;
 
@@ -65,7 +61,6 @@ let moretasks = (id, index) => {
   let insertbeforebutton = document.getElementById("insertbutton" + id);
   console.log(insertbeforebutton);
 
-  formparent.appendChild(tdfunction);
-  formparent.appendChild(tdcommand);
-  // trparent.insertBefore(tdcommand, insertbeforebutton);
+  formparent.insertBefore(tdfunctioninput, insertbeforebutton);
+  formparent.insertBefore(tdcommandinput, insertbeforebutton);
 };

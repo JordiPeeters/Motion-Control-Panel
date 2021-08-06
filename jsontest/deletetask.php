@@ -1,10 +1,11 @@
 <?php
-$id = $_GET['id'];
+$index = $_GET['id'];
+$key = $_GET['id2'];
 
 $data = file_get_contents('installaties.json');
 $data = json_decode($data, true);
-console_log($data);
-unset($data['installaties'][$id]);
+
+unset($data['installaties'][$index][$key]);
 
 $data['installaties'] = array_values($data['installaties']);
 $data = json_encode($data, JSON_PRETTY_PRINT);
@@ -12,7 +13,7 @@ file_put_contents('installaties.json', $data);
 
 header('location: index.php');
 
-function console_log($output, $with_script_tags = true)
+function consolelog($output, $with_script_tags = true)
 {
     $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
         ');';
