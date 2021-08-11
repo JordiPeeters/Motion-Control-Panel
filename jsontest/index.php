@@ -87,14 +87,25 @@
         </div>
 
         <div id="closescenes">
-            <?php 
-                $scenes = $data['scenes'];
-            ?>
-            <tr>
-                <form id="sceneform<?php ?>">
+            <?php
+            $scenes = $data['scenes'];
+            $formindex = 0;
+            foreach ($scenes as $key => $value) :
 
-                </form>
-            </tr>
+            ?>
+                <tr>
+                    <form id="sceneform<?php echo $formindex; ?>" method='get' action="editscenes.php?id=<?php $index ?>">
+                        <td><label>Naam</label></td>
+                        <td><input name="naam" value="<?php echo $value['naam']; ?>"></td>
+                        <td><label>Cue</label></td>
+                        <td><input name="naam" value="<?php echo $value['cue']; ?>"></td>
+                        <td><input id="insertbutton<?php echo $index ?>" type="submit"></td>
+                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $index ?>">Delete</a></td>
+                    </form>
+                </tr>
+            <?php
+            endforeach;
+            ?>
         </div>
         <script src="script.js"></script>
 </body>
