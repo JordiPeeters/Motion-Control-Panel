@@ -4,35 +4,39 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> -->
+        <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
     <div class="col-md-3"></div>
     <div class="col-md-6 well">
-        <h3 class="text-primary">Motion Installaties</h3>
+        <h3 class="text-primary">Motion Control Panel - Installaties</h3>
         <hr style="border-top:1px dotted #ccc;" />
         <div class="col-md-4">
-            <label>Aantal functies</label>
-            <input type="number" id="aantalfuncties" name="quantity" min="1" max="99" value="1">
-            <button onclick="maaktekstvakken()">kies</button>
-            <form method="POST" action="insert.php" id="form">
 
+        <button onclick="hideVoegtoe()">Voeg een installatie toe</button>
+
+        <div id="voegtoe">
+        <form method="POST" action="insert.php" id="form">
                 <div class="form-group">
+                <legend><span class="number">1</span>Kies de naam van de installatie</legend>
                     <label>Naam Installatie</label>
                     <input type="text" class="form-control" name="name" required="required" />
                 </div>
+                <legend><span class="number">2</span>Bepaal het aantal functies voor de installatie</legend>
+                <label>Aantal Functies</label>
                 <div class="form-group">
-                    <label>Functie</label>
-                    <input type="text" class="form-control" name="function" required="required" />
-                </div>
-                <div class="form-group">
-                    <label>Task</label>
-                    <input type="text" class="form-control" name="command" required="required" />
-                </div>
-                <button class="btn btn-primary" name="insert">Voeg installatie toe</button>
+            <input type="number" id="aantalfuncties" name="quantity" min="1" max="99" value="1">
+            <button onclick="maaktekstvakken()">Ga verder</button>
             </form>
+            <button class="btn btn-primary" name="insert">Voeg installatie toe</button>
         </div>
+</div>
+
+<button class="deletebutton" onclick="hideVerwijder()">Verwijder of wijzig een installatie</button>
+<div id="verwijder">
+
         <div class="col-md-8">
             <table class="table table-bordered table-striped">
                 <thead class="alert-info">
@@ -105,6 +109,7 @@
                 </tbody>
             </table>
         </div>
+    </div>
     </div>
 </body>
 <script src="script.js"></script>
