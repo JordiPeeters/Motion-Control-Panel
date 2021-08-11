@@ -9,7 +9,7 @@ const maaktekstvakken = () => {
 
     // functie
     let functielabel = document.createElement("label");
-    functielabel.innerHTML = "functie " + (functieindex + 1);
+    functielabel.innerHTML = "Naam Functie: " + (functieindex + 1);
 
     let functioninput = document.createElement("input");
     functioninput.type = "text";
@@ -19,7 +19,7 @@ const maaktekstvakken = () => {
 
     // command
     let commandlabel = document.createElement("label");
-    commandlabel.innerHTML = "command " + (functieindex + 1);
+    commandlabel.innerHTML = "Watchout Command: " + (functieindex + 1);
 
     let taskinput = document.createElement("input");
     taskinput.type = "text";
@@ -66,3 +66,21 @@ let moretasks = (id, index) => {
   formparent.insertBefore(tdfunctioninput, insertbeforebutton);
   formparent.insertBefore(tdcommandinput, insertbeforebutton);
 };
+
+function hideVoegtoe() {
+  var x = document.getElementById("voegtoe");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function hideVerwijder() {
+  var x = document.getElementById("verwijder");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
