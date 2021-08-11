@@ -36,7 +36,7 @@
                 <label>Task</label>
                 <input type="text" class="form-control" name="command" required="required" />
             </div>
-            <button class="btn btn-primary" name="insert">Voeg installatie toe</button>
+            <button id="insertbutton" class="btn btn-primary" name="insert">Voeg installatie toe</button>
         </form>
     </div>
 

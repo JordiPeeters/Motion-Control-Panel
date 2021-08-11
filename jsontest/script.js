@@ -1,5 +1,5 @@
 var aantal = document.getElementById("aantalfuncties");
-var div = document.getElementById("form");
+var formparent = document.getElementById("form");
 let functieindex = 0;
 const maaktekstvakken = () => {
   for (let i = 0; i < aantal.value; i++) {
@@ -33,7 +33,9 @@ const maaktekstvakken = () => {
     parentdiv.appendChild(commandlabel);
     parentdiv.appendChild(taskinput);
 
-    div.appendChild(parentdiv);
+    insertbutton = document.getElementById("insertbutton");
+
+    formparent.appendChild(parentdiv);
 
     functieindex++;
   }
