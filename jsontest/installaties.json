@@ -16,7 +16,7 @@
             "id": "cue"
         },
         {
-            "naam": "online \/ offline",
+            "naam": "offline -> online",
             "task": "",
             "id": "online"
         }
@@ -116,6 +116,26 @@
             "": "87",
             "67": "0",
             "98": "976"
+        },
+        {
+            "naam": "banaan",
+            "6576596586587": "56",
+            "876": "6867",
+            "6": "7686",
+            "8767868": "768",
+            "463": "6347",
+            "8765432345236": "456",
+            "computers aan": "COMPUTERS - AAN",
+            "computers uit": "COMPUTERS - UIT",
+            "computers herstart": "COMPUTERS - HERSTART",
+            "": "87",
+            "67": "0",
+            "98": "976"
+        },
+        {
+            "naam": "jordis hoofd",
+            "asdjdasik": "98343982",
+            "249124": "FJKFDSFJKSD"
         }
     ]
 }
