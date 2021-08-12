@@ -21,20 +21,20 @@
             <button action="none" onclick="hideVoegtoe()">Voeg een installatie toe</button>
 
             <div id="voegtoe">
-                <form method="POST" action="insert.php" id="form">
+                <form method="POST" action="insert.php" >
                     <div class="form-group">
                         <legend><span class="number">1</span>Kies de naam van de installatie</legend>
-                        <label>Naam Installatie</label>
+                        <label>Naam installatie</label>
                         <input type="text" class="form-control" name="name" required="required" />
                     </div>
                     <legend><span class="number">2</span>Bepaal het aantal functies voor de installatie</legend>
-                    <label>Aantal Functies</label>
-                    <div class="form-group">
+                    <label>Aantal functies</label>
+                    <div class="form-group" id="installatieform">
                         <input type="number" id="aantalfuncties" name="quantity" min="1" max="99" value="1">
                         <input type="button" onclick="maaktekstvakken()" value="Ga verder">
                         <!-- <button onclick="maaktekstvakken()">Ga verder</button> -->
+                        <button id="installatieinsert" class="btn btn-primary" name="insert">Voeg installatie toe</button>
                 </form>
-                <button class="btn btn-primary" name="insert">Voeg installatie toe</button>
             </div>
         </div>
         <button class="deletebutton" onclick="hideVerwijder()">Verwijder of wijzig een installatie</button>
@@ -72,11 +72,11 @@
                         ?>
                         <input type="hidden" name="id" value="<?php echo $index; ?>" />
 
-                        <td><input id="insertbutton<?php echo $index ?>" type="submit"></td>
-                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $index ?>">Delete</a></td>
                         <td><input type="button" class="moretasks" onclick="moretasks(<?php echo $index;
                                                                                         echo ',';
                                                                                         echo $installatieindex ?>)" value="tasks toevoegen"></input>
+                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $index ?>">Delete</a></td>
+                        <td><input id="insertbutton<?php echo $index ?>" type="submit"></td>
                         <td>
                     </form>
                 </tr>
@@ -87,27 +87,45 @@
         </div>
 
         <div id="closescenes">
-            <?php
-            $scenes = $data['scenes'];
-            $formindex = 0;
-            foreach ($scenes as $key => $value) :
+            <div id="voegscenetoe">
+                <form method="POST" action="sceneinsert.php" id="form">
+                    <div class="form-group">
+                        <legend><span class="number">1</span>Kies de naam van de scène</legend>
+                        <label>Naam scène</label>
+                        <input type="text" class="form-control" name="name" required="required" />
+                        <legend><span class="number">2</span>Bepaal de cue van de scène</legend>
+                        <label>Cue</label>
+                        <input type="text" class="form-control" name="cue" required="required" />
+                </form>
+                <button class="btn btn-primary" name="insert">Voeg scène toe</button>
+            </div>
 
-            ?>
-                <tr>
-                    <form id="sceneform<?php echo $formindex; ?>" method='get' action="editscenes.php?id=<?php $index ?>">
-                        <td><label>Naam</label></td>
-                        <td><input name="naam" value="<?php echo $value['naam']; ?>"></td>
-                        <td><label>Cue</label></td>
-                        <td><input name="naam" value="<?php echo $value['cue']; ?>"></td>
-                        <td><input id="insertbutton<?php echo $index ?>" type="submit"></td>
-                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $index ?>">Delete</a></td>
-                    </form>
-                </tr>
-            <?php
-            endforeach;
-            ?>
         </div>
-        <script src="script.js"></script>
+
+        <?php
+        $scenes = $data['scenes'];
+        $formindex = 0;
+        $sceneindex = 0;
+        foreach ($scenes as $key => $value) :
+
+        ?>
+            <tr>
+                <form id="sceneform<?php echo $formindex; ?>" method='get' action="sceneedit.php?id=<?php $index ?>">
+                    <td><label>Naam</label></td>
+                    <td><input name="naam" value="<?php echo $value['naam']; ?>"></td>
+                    <td><label>Cue</label></td>
+                    <td><input name="cue" value="<?php echo $value['cue']; ?>"></td>
+                    <td><input type="submit" value="Pas aan"></td>
+                    <td><a class="btn btn-danger" href="scenedelete.php?id=<?php echo $sceneindex ?>">Delete</a></td>
+                    <input type="hidden" name="id" value="<?php echo $sceneindex; ?>" />
+                </form>
+            </tr>
+        <?php
+            $sceneindex++;
+        endforeach;
+        ?>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -26,11 +26,16 @@ homeButton.onclick = GoToHome =() => {
   adminScreen.style.display = "none";
 };
 advancedButton.onclick = GoToAdvanced = () => {
+  console.log("go to advanced");
   document.title = "Advanced";
   homePage.style.display = "none";
   advancedScreen.style.display = "flex";
   loginScreen.style.display = "none";
   adminScreen.style.display = "none";
+  if(currentScreen!=null){
+    currentScreen.style.display = "none";
+    currentScreen = null;
+  }
 };
 if (adminButton != null){
   adminButton.onclick = GoToAdmin = () => {

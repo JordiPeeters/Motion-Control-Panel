@@ -1,5 +1,5 @@
 var aantal = document.getElementById("aantalfuncties");
-var formparent = document.getElementById("form");
+var formparent = document.getElementById("installatieform");
 let functieindex = 0;
 const maaktekstvakken = () => {
   for (let i = 0; i < aantal.value; i++) {
@@ -9,7 +9,7 @@ const maaktekstvakken = () => {
 
     // functie
     let functielabel = document.createElement("label");
-    functielabel.innerHTML = "Naam Functie: " + (functieindex + 1);
+    functielabel.innerHTML = "Naam Functie " + (functieindex + 1) + ":";
 
     let functioninput = document.createElement("input");
     functioninput.type = "text";
@@ -19,7 +19,7 @@ const maaktekstvakken = () => {
 
     // command
     let commandlabel = document.createElement("label");
-    commandlabel.innerHTML = "Watchout Command: " + (functieindex + 1);
+    commandlabel.innerHTML = "Watchout Command " + (functieindex + 1) + ":";
 
     let taskinput = document.createElement("input");
     taskinput.type = "text";
@@ -33,9 +33,9 @@ const maaktekstvakken = () => {
     parentdiv.appendChild(commandlabel);
     parentdiv.appendChild(taskinput);
 
-    insertbutton = document.getElementById("insertbutton");
+    insertbutton = document.getElementById("installatieinsert");
 
-    formparent.appendChild(parentdiv);
+    formparent.insertBefore(parentdiv, insertbutton);
 
     functieindex++;
   }
