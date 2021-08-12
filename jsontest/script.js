@@ -1,11 +1,11 @@
 var aantal = document.getElementById("aantalfuncties");
-var formparent = document.getElementById("installatieform");
+var formparent = document.getElementById("addhere");
 let functieindex = 0;
 const maaktekstvakken = () => {
   for (let i = 0; i < aantal.value; i++) {
     // parent div
     let parentdiv = document.createElement("div");
-    parentdiv.className = "form-group";
+    // parentdiv.className = "form-group";
 
     // functie
     let functielabel = document.createElement("label");
@@ -33,12 +33,17 @@ const maaktekstvakken = () => {
     parentdiv.appendChild(commandlabel);
     parentdiv.appendChild(taskinput);
 
-    insertbutton = document.getElementById("installatieinsert");
+    let insertbutton = document.getElementById("addbefore");
 
-    formparent.insertBefore(parentdiv, insertbutton);
+    formparent.insertBefore(functielabel, insertbutton);
+    formparent.insertBefore(functioninput, insertbutton);
+    formparent.insertBefore(commandlabel, insertbutton);
+    formparent.insertBefore(taskinput, insertbutton);
+    // formparent.appendChild(parentdiv);
 
     functieindex++;
   }
+  document.getElementById("installatieinsert").style.display = "flex";
 };
 
 let moretasks = (id, index) => {
@@ -60,7 +65,7 @@ let moretasks = (id, index) => {
   tdfunction.appendChild(tdfunctioninput);
   tdcommand.appendChild(tdcommandinput);
 
-  let insertbeforebutton = document.getElementById("insertbutton" + id);
+  let insertbeforebutton = document.getElementById("buttondiv" + id);
   console.log(insertbeforebutton);
 
   formparent.insertBefore(tdfunctioninput, insertbeforebutton);
@@ -84,3 +89,12 @@ function hideVerwijder() {
     x.style.display = "block";
   }
 }
+
+let toggleUI = (element) => {
+  var x = document.getElementById(element);
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+};

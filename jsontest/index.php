@@ -12,32 +12,30 @@
 </head>
 
 <body>
-    <div class="col-md-3"></div>
-    <div class="col-md-6 well">
+    <div class="content">
         <h3 class="text-primary">Motion Control Panel</h3>
-        <hr style="border-top:1px dotted #ccc;" />
-        <div class="col-md-4">
+        <button class="togglebutton" action="none" onclick="hideVoegtoe()">Voeg een installatie toe</button>
 
-            <button action="none" onclick="hideVoegtoe()">Voeg een installatie toe</button>
+        <div id="voegtoe">
+            <form id="insertform" method="POST" action="insert.php">
+                <legend><span class="number">1</span>Kies de naam van de installatie</legend>
+                <label>Naam installatie</label>
+                <input type="text" class="form-control" name="name" required="required" />
 
-            <div id="voegtoe">
-                <form method="POST" action="insert.php" >
-                    <div class="form-group">
-                        <legend><span class="number">1</span>Kies de naam van de installatie</legend>
-                        <label>Naam installatie</label>
-                        <input type="text" class="form-control" name="name" required="required" />
-                    </div>
-                    <legend><span class="number">2</span>Bepaal het aantal functies voor de installatie</legend>
-                    <label>Aantal functies</label>
-                    <div class="form-group" id="installatieform">
-                        <input type="number" id="aantalfuncties" name="quantity" min="1" max="99" value="1">
-                        <input type="button" onclick="maaktekstvakken()" value="Ga verder">
-                        <!-- <button onclick="maaktekstvakken()">Ga verder</button> -->
-                        <button id="installatieinsert" class="btn btn-primary" name="insert">Voeg installatie toe</button>
-                </form>
-            </div>
+                <legend><span class="number">2</span>Bepaal het aantal functies voor de installatie</legend>
+                <label>Aantal functies</label>
+                <input type="number" id="aantalfuncties" name="quantity" min="1" max="99" value="1">
+                <div class="form-group" id="addhere">
+                    <input id="addfunctions" type="button" action="none" onclick="maaktekstvakken()" value="Ga verder">
+                    <!-- <button onclick="maaktekstvakken()">Ga verder</button> -->
+                    <div id="addbefore"></div>
+                    <button class="togglebutton" id="installatieinsert" class="btn btn-primary" name="insert">Voeg installatie toe</button>
+
+                </div>
+            </form>
         </div>
-        <button class="deletebutton" onclick="hideVerwijder()">Verwijder of wijzig een installatie</button>
+
+        <button class="togglebutton" onclick="hideVerwijder()">Verwijder of wijzig een installatie</button>
         <div id="verwijder">
 
             <!-- json content -->
@@ -48,22 +46,23 @@
             $index = 0;
 
             foreach ($installaties as $key => $value) :
+                $currentinstallatie = $value;
                 # code...
             ?>
                 <tr>
-                    <form id="form<?php echo $key ?>" method='get' action="edit.php?id=<?php $index ?>">
+                    <form class="forms" id="form<?php echo $key ?>" method='get' action="edit.php?id=<?php $index ?> ">
                         <?php
                         $installatieindex = 0;
                         foreach ($value as $key => $jsonvalue) :
                             if ($key == 'naam') {
                         ?>
-                                <td><input name='naam' value='<?php echo $jsonvalue ?>'></input></td>
+                                <td><input class="naam" name='naam' value='<?php echo $jsonvalue ?>'></input></td>
                             <?php
                             } else {
                             ?>
-                                <td> <input name="functie<?php echo $installatieindex ?>" value="<?php echo $key; ?>"></input></td>
-                                <td> <input name="command<?php echo $installatieindex ?>" value="<?php echo $jsonvalue; ?>"></input></td>
-                                <td> <input type="button" onclick="window.location.href = 'deletetask.php?id=<?php echo $index ?>&id2=<?php echo $key ?>'" value="-"></input></td>
+                                <td> <input class="inputtext" name="functie<?php echo $installatieindex ?>" value="<?php echo $key; ?>"></input></td>
+                                <td> <input class="inputtext" name="command<?php echo $installatieindex ?>" value="<?php echo $jsonvalue; ?>"></input></td>
+                                <td> <input class="removetask" type="button" onclick="window.location.href = 'deletetask.php?id=<?php echo $index ?>&id2=<?php echo $key ?>'" value="-"></input></td>
 
                         <?php
                             }
@@ -71,13 +70,13 @@
                         endforeach;
                         ?>
                         <input type="hidden" name="id" value="<?php echo $index; ?>" />
-
-                        <td><input type="button" class="moretasks" onclick="moretasks(<?php echo $index;
-                                                                                        echo ',';
-                                                                                        echo $installatieindex ?>)" value="tasks toevoegen"></input>
-                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $index ?>">Delete</a></td>
-                        <td><input id="insertbutton<?php echo $index ?>" type="submit"></td>
-                        <td>
+                        <div class="buttoncontainer" id="buttondiv<?php echo $index; ?>">
+                            <td><input class="moretasks" type="button" action="none" class="moretasks" onclick="moretasks(<?php echo $index;
+                                                                                                                            echo ',';
+                                                                                                                            echo $installatieindex ?>)" value="Task toevoegen"></input>
+                            <td><a onclick="return confirm('Installatie verwijderen?');" class="deletebutton" href="delete.php?id=<?php echo $index ?>">Verwijder installatie</a></td>
+                            <td><input class="savebutton" id="insertbutton<?php echo $index ?>" type="submit" value="Opslaan"></td>
+                        </div>
                     </form>
                 </tr>
             <?php
@@ -86,10 +85,13 @@
             ?>
         </div>
 
-        <div id="closescenes">
+        <button class="togglebutton" action="none" onclick="toggleUI('scenes')">Wijzig scènes</button>
+
+        <div id="scenes">
             <div id="voegscenetoe">
                 <form method="POST" action="sceneinsert.php" id="form">
                     <div class="form-group">
+                        <legend>Voeg scène toe</legend>
                         <legend><span class="number">1</span>Kies de naam van de scène</legend>
                         <label>Naam scène</label>
                         <input type="text" class="form-control" name="name" required="required" />
@@ -97,33 +99,39 @@
                         <label>Cue</label>
                         <input type="text" class="form-control" name="cue" required="required" />
                 </form>
-                <button class="btn btn-primary" name="insert">Voeg scène toe</button>
+                <div class="buttoncontainer">
+                    <button class="togglebutton" name="insert">Voeg scène toe</button>
+                </div>
             </div>
 
+
+            <?php
+            $scenes = $data['scenes'];
+            $formindex = 0;
+            $sceneindex = 0;
+            foreach ($scenes as $key => $value) :
+
+            ?>
+                <tr>
+                    <form class="scenesform" id="sceneform<?php echo $formindex; ?>" method='get' action="sceneedit.php?id=<?php $index ?>">
+                        <div class="sceneinput">
+                            <!-- <td><label>Naam</label></td> -->
+                            <td><input class="naam" name="naam" value="<?php echo $value['naam']; ?>"></td>
+                            <td><label>Cue</label></td>
+                            <td><input class="inputtext" name="cue" value="<?php echo $value['cue']; ?>"></td>
+                            <input type="hidden" name="id" value="<?php echo $sceneindex; ?>" />
+                        </div>
+                        <div class="buttoncontainer" id="buttondiv<?php echo $index; ?>">
+                            <td><a onclick="return confirm('Scène verwijderen?');" class="deletebutton" href="scenedelete.php?id=<?php echo $sceneindex ?>">Verwijder scène</a></td>
+                            <td><input class="savebutton" type="submit" value="Opslaan"></td>
+                        </div>
+                    </form>
+                </tr>
+            <?php
+                $sceneindex++;
+            endforeach;
+            ?>
         </div>
-
-        <?php
-        $scenes = $data['scenes'];
-        $formindex = 0;
-        $sceneindex = 0;
-        foreach ($scenes as $key => $value) :
-
-        ?>
-            <tr>
-                <form id="sceneform<?php echo $formindex; ?>" method='get' action="sceneedit.php?id=<?php $index ?>">
-                    <td><label>Naam</label></td>
-                    <td><input name="naam" value="<?php echo $value['naam']; ?>"></td>
-                    <td><label>Cue</label></td>
-                    <td><input name="cue" value="<?php echo $value['cue']; ?>"></td>
-                    <td><input type="submit" value="Pas aan"></td>
-                    <td><a class="btn btn-danger" href="scenedelete.php?id=<?php echo $sceneindex ?>">Delete</a></td>
-                    <input type="hidden" name="id" value="<?php echo $sceneindex; ?>" />
-                </form>
-            </tr>
-        <?php
-            $sceneindex++;
-        endforeach;
-        ?>
     </div>
     <script src="script.js"></script>
 </body>

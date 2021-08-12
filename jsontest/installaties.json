@@ -58,7 +58,8 @@
             "computers uit": "COMPUTERS - ZWEMBAD UIT",
             "computers herstart": "COMPUTERS - ZWEMBAD HERSTART",
             "projectoren aan": "PROJECTOREN - ZWEMBAD AAN",
-            "projectoren uit": "PROJECTOREN - ZWEMBAD UIT"
+            "projectoren uit": "PROJECTOREN - ZWEMBAD UIT",
+            "led aan": "LED AAN"
         },
         {
             "naam": "curved",
@@ -118,24 +119,16 @@
             "98": "976"
         },
         {
-            "naam": "banaan",
-            "6576596586587": "56",
-            "876": "6867",
-            "6": "7686",
-            "8767868": "768",
-            "463": "6347",
-            "8765432345236": "456",
-            "computers aan": "COMPUTERS - AAN",
-            "computers uit": "COMPUTERS - UIT",
-            "computers herstart": "COMPUTERS - HERSTART",
-            "": "87",
-            "67": "0",
-            "98": "976"
-        },
-        {
             "naam": "jordis hoofd",
             "asdjdasik": "98343982",
             "249124": "FJKFDSFJKSD"
+        },
+        {
+            "naam": "123",
+            "q12321": "123213"
+        },
+        {
+            "naam": "123"
         }
     ]
 }
