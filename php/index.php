@@ -47,6 +47,7 @@
 
             foreach ($installaties as $key => $value) :
                 $currentinstallatie = $value;
+                $hasimage = false;
                 # code...
             ?>
                 <tr>
@@ -58,7 +59,15 @@
                         ?>
                                 <td><input class="naam" name='naam' value='<?php echo $jsonvalue ?>'></input></td>
                             <?php
-                            } else {
+                            } else if (!$hasimage){
+                            ?>
+                                <td><label>afbeelding + extentie</label></td>
+                                <td><input class="inputtext" name='afbeelding' value='<?php if($key == 'afbeelding'){ echo $jsonvalue;}?>'></input></td>
+
+                            <?php
+                            $hasimage = true;
+                            }
+                            if($key !='naam' && $key !='afbeelding'){
                             ?>
                                 <td> <input class="inputtext" name="functie<?php echo $installatieindex ?>" value="<?php echo $key; ?>"></input></td>
                                 <td> <input class="inputtext" name="command<?php echo $installatieindex ?>" value="<?php echo $jsonvalue; ?>"></input></td>

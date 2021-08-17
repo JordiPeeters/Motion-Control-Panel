@@ -21,6 +21,10 @@ foreach ($_GET as $key => $value) {
             $value = str_replace("_", " ", $value);
             $gegevens->$jsonkey = $value;
         }
+        
+    }
+    if($key =='afbeelding'){
+        $gegevens -> afbeelding = $value;
     }
 }
 

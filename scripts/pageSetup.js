@@ -5,7 +5,6 @@ let scenes = [];
 const homePage = document.getElementById("homescreen");
 let currentScreen;
 
-
 // page setup
 // __________
 const createButtons = (data) => {
@@ -55,25 +54,33 @@ const createHomeScreen = (tasks) => {
     };
   } else if (tasks.id == "online") {
     homeScreenButton.onclick = () => {
-      if (isOnline) {
-        WO.goOffline();
-        isOnline = !isOnline;
-        userLog(tasks);
-      } else {
+      // TODO: ga offline en dan weer online
+      console.log("yeet");
+      WO.goOffline();
+      setTimeout(function() {
+        //your code to be executed after 1 second
         WO.goOnline();
-        isOnline = !isOnline;
-        userLog(tasks);
-      }
+      }, 10000);
+      userLog(tasks);
     };
-  } else {
+  } else if(tasks.id == "on"){
     homeScreenButton.onclick = () => {
       // task
       WO.run(tasks.task);
-
+      setTimeout(function() {
+        //your code to be executed after 1 second
+        WO.goOnline();
+        // TODO: play knop misschien of niet???
+      }, 180000);
       // user log
       userLog(tasks);
-    };
-  }
+    }
+    }else{
+      WO.run(tasks.task);
+      userLog(tasks);
+    }
+  
+  
   homescreenbuttonscontainer.appendChild(homeScreenButton);
 };
 
@@ -111,6 +118,7 @@ const screen2 = document.getElementById("advancedbuttonscontainer");
 
 const createButton = (installatie) => {
   // create buttons
+  // TODO: image per installatie
   let installationButton = document.createElement("button");
   installationButton.className = "installationbutton";
   installationButton.innerHTML = installatie.naam;
@@ -119,6 +127,20 @@ const createButton = (installatie) => {
     screen.style.display = "flex";
     currentScreen = screen;
   };
+
+  installationButton.style.backgroundImage = "url('installatieimages/" + installatie["afbeelding"];
+  installationButton.style.backgroundSize = "cover";
+  installationButton.style.backgroundPosition = "center";
+
+
+
+
+  // TODO: voeg afbeelding toe
+  // let imagediv = document.createElement("div");
+  // let image = document.createElement("img");
+  // image.setAttribute("src", "installatieimages/" + installatie["afbeelding"]);
+  // imagediv.appendChild(image);
+  // installationButton.appendChild(imagediv);
 
   screen2.appendChild(installationButton);
 };
@@ -180,9 +202,9 @@ let createInstallationScreen = (installatie) => {
   otherDivTitle.innerHTML = "overig";
   otherDiv.appendChild(otherDivTitle);
 
-  // for each element per installation create buttons for each function
+  // for each element per installation create buttons for each category
   Object.keys(installatie).forEach((key) => {
-    if (key !== "naam") {
+    if (key !== "naam" && key != "afbeelding") {
       let onOffButton = document.createElement("button");
       onOffButton.className = "onoffbutton";
       onOffButton.innerHTML = key.replaceAll("_", " ");
@@ -215,13 +237,13 @@ document.addEventListener("keydown", (event) => {
     currentScreen.style.display = "none";
     currentScreen = null;
   }
-  if(event.key === "1"){
+  if (event.key === "1") {
     GoToHome();
   }
-  if(event.key === "2"){
+  if (event.key === "2") {
     GoToAdvanced();
   }
-  if(event.key === "3"){
+  if (event.key === "3") {
     GoToAdmin();
   }
 });

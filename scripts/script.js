@@ -26,7 +26,6 @@ homeButton.onclick = GoToHome =() => {
   adminScreen.style.display = "none";
 };
 advancedButton.onclick = GoToAdvanced = () => {
-  console.log("go to advanced");
   document.title = "Advanced";
   homePage.style.display = "none";
   advancedScreen.style.display = "flex";

@@ -54,15 +54,16 @@
     "installaties": [
         {
             "naam": "zwembad",
+            "afbeelding": "zwembad.png",
             "computers aan": "COMPUTERS  ZWEMBAD AAN",
             "computers uit": "COMPUTERS - ZWEMBAD UIT",
             "computers herstart": "COMPUTERS - ZWEMBAD HERSTART",
             "projectoren aan": "PROJECTOREN - ZWEMBAD AAN",
-            "projectoren uit": "PROJECTOREN - ZWEMBAD UIT",
-            "led aan": "LED AAN"
+            "projectoren uit": "PROJECTOREN - ZWEMBAD UIT"
         },
         {
             "naam": "curved",
+            "afbeelding": "curved.png",
             "computers aan": "COMPUTERS - CURVED AAN",
             "computers uit": "COMPUTERS - CURVED UIT",
             "computers herstart": "COMPUTERS - CURVED HERSTART",
@@ -71,6 +72,7 @@
         },
         {
             "naam": "interactief",
+            "afbeelding": "interactief.png",
             "computers aan": "COMPUTERS - INTERACTIEF AAN",
             "computers uit": "COMPUTERS - INTERACTIEF UIT",
             "computers herstart": "COMPUTERS - INTERACTIEF HERSTART",
@@ -79,6 +81,7 @@
         },
         {
             "naam": "kaleidoscoop",
+            "afbeelding": "kaleidoscoop.png",
             "computers aan": "COMPUTERS - KALEIDOSCOOP AAN",
             "computers uit": "COMPUTERS - KALEIDOSCOOP UIT",
             "computers herstart": "COMPUTERS - KALEIDOSCOOP HERSTART",
@@ -87,48 +90,24 @@
         },
         {
             "naam": "carrousel",
-            "computers aan": "COMPUTERS - CARROUSEL AAN",
-            "computers uit": "COMPUTERS - CARROUSEL UIT",
-            "computers herstart": "COMPUTERS - CARROUSEL HERSTART",
-            "projectoren aan": "PROJECTOREN - CARROUSEL AAN",
-            "projectoren uit": "PROJECTOREN - CARROUSEL UIT"
+            "afbeelding": "carrousel.png"
         },
         {
             "naam": "ledtunnel",
-            "computers aan": "COMPUTERS - LEDTUNNEL AAN",
-            "computers uit": "COMPUTERS - LEDTUNNEL UIT",
-            "computers herstart": "COMPUTERS - LEDTUNNEL HERSTART",
-            "projectoren aan": "PROJECTOREN - LEDTUNNEL AAN",
-            "projectoren uit": "PROJECTOREN - LEDTUNNEL UIT"
+            "afbeelding": "tunnel.png",
+            "computers aan": "LEDTUNNEL AAN",
+            "computers uit": "LEDTUNNEL UIT"
         },
         {
             "naam": "alle computers",
+            "afbeelding": "allecomputers.jpg",
             "computers aan": "COMPUTERS - AAN",
             "computers uit": "COMPUTERS - UIT",
             "computers herstart": "COMPUTERS - HERSTART"
         },
         {
             "naam": "uitlijngrid",
-            "uitlijngrid aan": "UITLIJNGRID"
-        },
-        {
-            "naam": "45",
-            "6456": "64",
-            "": "87",
-            "67": "0",
-            "98": "976"
-        },
-        {
-            "naam": "jordis hoofd",
-            "asdjdasik": "98343982",
-            "249124": "FJKFDSFJKSD"
-        },
-        {
-            "naam": "123",
-            "q12321": "123213"
-        },
-        {
-            "naam": "123"
+            "afbeelding": "uitlijngrid.gif"
         }
     ]
 }

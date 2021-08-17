@@ -15,7 +15,7 @@ const fetchJSONFile = (path, callback) => {
 
 // onload roept functie aan die buttons laadt (pageSetup.js)
 window.onload = () => {
-  fetchJSONFile("jsontest/installaties.json", function (data) {
+  fetchJSONFile("php/installaties.json", function (data) {
     console.log("json loaded");
     createButtons(data);
   });
