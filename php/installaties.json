@@ -2,23 +2,13 @@
     "homescherm": [
         {
             "naam": "alles aan",
-            "task": "ALLES AAN",
+            "task": "ALLES OPSTARTEN",
             "id": "on"
         },
         {
             "naam": "alles uit",
-            "task": "ALLES UIT",
+            "task": "ALLES AFSLUITEN",
             "id": "off"
-        },
-        {
-            "naam": "start show",
-            "task": "START SHOW",
-            "id": "cue"
-        },
-        {
-            "naam": "offline -> online",
-            "task": "",
-            "id": "online"
         }
     ],
     "scenes": [
@@ -31,7 +21,7 @@
             "cue": "03"
         },
         {
-            "naam": "elements",
+            "naam": "kids time",
             "cue": "05"
         },
         {
@@ -106,8 +96,9 @@
             "computers herstart": "COMPUTERS - HERSTART"
         },
         {
-            "naam": "uitlijngrid",
-            "afbeelding": "uitlijngrid.gif"
+            "naam": "1",
+            "13": "13",
+            "222": "231"
         }
     ]
 }

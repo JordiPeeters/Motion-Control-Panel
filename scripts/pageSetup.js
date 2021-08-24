@@ -36,7 +36,6 @@ var homescreenbuttonscontainer = document.getElementById(
   "homescreenbuttonscontainer"
 );
 
-var isOnline = false;
 const createHomeScreen = (tasks) => {
   // buttons
 
@@ -45,42 +44,30 @@ const createHomeScreen = (tasks) => {
   homeScreenButton.innerHTML = tasks.naam;
   homeScreenButton.id = tasks.id;
 
-  if (tasks.id == "cue") {
+  if (tasks.id == "on") {
     homeScreenButton.onclick = () => {
-      // task
-      WO.gotoControlCue("", tasks.task);
-      // user log
-      userLog(tasks);
+      if (confirm("Alles opstarten?")) {
+        // task
+        WO.run(tasks.task);
+        setTimeout(function () {
+          //your code to be executed after 1 second
+          WO.goOnline();
+          // TODO: play knop misschien of niet???
+        }, 180000);
+        // user log
+        userLog(tasks);
+      }
     };
-  } else if (tasks.id == "online") {
+  } else if ((tasks.id = "off")) {
     homeScreenButton.onclick = () => {
-      // TODO: ga offline en dan weer online
-      console.log("yeet");
-      WO.goOffline();
-      setTimeout(function() {
-        //your code to be executed after 1 second
-        WO.goOnline();
-      }, 10000);
-      userLog(tasks);
+      if (confirm("Alles afsluiten?")) {
+        console.log("alles afstuiten id= " + tasks.task);
+        WO.run(tasks.task);
+        userLog(tasks);
+      }
     };
-  } else if(tasks.id == "on"){
-    homeScreenButton.onclick = () => {
-      // task
-      WO.run(tasks.task);
-      setTimeout(function() {
-        //your code to be executed after 1 second
-        WO.goOnline();
-        // TODO: play knop misschien of niet???
-      }, 180000);
-      // user log
-      userLog(tasks);
-    }
-    }else{
-      WO.run(tasks.task);
-      userLog(tasks);
-    }
-  
-  
+  }
+
   homescreenbuttonscontainer.appendChild(homeScreenButton);
 };
 
@@ -128,12 +115,10 @@ const createButton = (installatie) => {
     currentScreen = screen;
   };
 
-  installationButton.style.backgroundImage = "url('installatieimages/" + installatie["afbeelding"];
+  installationButton.style.backgroundImage =
+    "url('installatieimages/" + installatie["afbeelding"];
   installationButton.style.backgroundSize = "cover";
   installationButton.style.backgroundPosition = "center";
-
-
-
 
   // TODO: voeg afbeelding toe
   // let imagediv = document.createElement("div");
@@ -196,6 +181,10 @@ let createInstallationScreen = (installatie) => {
   // add divs per category: other
   let otherDiv = document.createElement("div");
   otherDiv.className = "categoryDiv";
+  let idname = installatie.naam + "";
+  let trimStr = idname.replace(/\s+/g, '');
+
+  otherDiv.id = trimStr + "other";
   installationScreen.appendChild(otherDiv);
 
   let otherDivTitle = document.createElement("p");

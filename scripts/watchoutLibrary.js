@@ -12,6 +12,11 @@ const WO = (function () {
     states[timeline] = true;
   };
 
+  function halt(timeline) {
+    send('halt "' + timeline + '"\n');
+    states[timeline] = false;
+  }
+
   const toggleTimeline = (timeline) => {
     if (states[timeline] == true) {
       halt(timeline);
@@ -29,6 +34,9 @@ const WO = (function () {
   function goOffline() {
     send("online false \n");
   }
+  function gotoTime(time){
+    send('gotoTime "' + time + '" \n');
+  }
 
   return {
     allesAan: allesAan,
@@ -37,6 +45,8 @@ const WO = (function () {
     gotoControlCue: gotoControlCue,
     goOnline: goOnline,
     goOffline: goOffline,
+    gotoTime: gotoTime,
+    halt: halt,
   };
 })();
 
@@ -51,11 +61,6 @@ const send = (message) => {
 
 function kill(timeline) {
   send('kill "' + timeline + '"\n');
-  states[timeline] = false;
-}
-
-function halt(timeline) {
-  send('halt "' + timeline + '"\n');
   states[timeline] = false;
 }
 

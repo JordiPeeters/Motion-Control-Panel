@@ -104,22 +104,53 @@ button:active {
 
 /* homescreen */
 #homescreen {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   width: 100%;
-  justify-content: space-evenly;
+  justify-items: center;
+
+
+  /* justify-content: space-evenly; */
   /* height: 70%; */
 }
 
 #homescreenbuttonscontainer {
+  grid-row-start: 1;
+  /* grid-row-end: 1; */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5vh;
   padding-bottom: 0px;
-  height: 70vh;
+  height: 50vh;
   width: 50%;
 }
+
+#playpausecontainer{
+  display: flex;
+}
+.playpause{
+  margin: 2vw;
+  border-radius: 1vw;
+  display: block;
+}
+.playpause:hover{
+  cursor: pointer;
+}
+
+.playpauseimage{
+  height:12vh;
+  line-height: 0 ;
+  vertical-align: middle;
+}
+
+#pausebuttondiv{
+  background-color: #0000002b;
+}
+
 #homescreenscenes {
+  grid-row-start: 1;
+  grid-row-end: 3;  
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -129,7 +160,7 @@ button:active {
   padding-top: 0px;
   padding-bottom: 0px;
   height: 70vh;
-  width: 50%;
+  width: 80%;
   color: white;
 }
 

@@ -18,9 +18,9 @@ let loginScreen = document.getElementById("loginscreen");
 let adminScreen = document.getElementById("adminscreen");
 
 //onclicks page navigation
-homeButton.onclick = GoToHome =() => {
+homeButton.onclick = GoToHome = () => {
   document.title = "Home";
-  homePage.style.display = "flex";
+  homePage.style.display = "grid";
   advancedScreen.style.display = "none";
   loginScreen.style.display = "none";
   adminScreen.style.display = "none";
@@ -31,12 +31,12 @@ advancedButton.onclick = GoToAdvanced = () => {
   advancedScreen.style.display = "flex";
   loginScreen.style.display = "none";
   adminScreen.style.display = "none";
-  if(currentScreen!=null){
+  if (currentScreen != null) {
     currentScreen.style.display = "none";
     currentScreen = null;
   }
 };
-if (adminButton != null){
+if (adminButton != null) {
   adminButton.onclick = GoToAdmin = () => {
     storageToTextArea();
     document.title = "Admin";
@@ -45,8 +45,8 @@ if (adminButton != null){
     loginScreen.style.display = "none";
     adminScreen.style.display = "flex";
   };
-} 
-if (loginButton != null){
+}
+if (loginButton != null) {
   loginButton.onclick = () => {
     document.title = "Login";
     homePage.style.display = "none";
@@ -80,20 +80,20 @@ const storageToTextArea = () => {
     }
   }
   //scroll to bottom in user log text field, after delay of 10ms
-  setTimeout(() => { userLogTextField.scrollTop = userLogTextField.scrollHeight;  }, 10);
-  
+  setTimeout(() => {
+    userLogTextField.scrollTop = userLogTextField.scrollHeight;
+  }, 10);
 
   let storageprogress = localStorageSpace() / 5000;
 
-  if (Number.isNaN(storageprogress)){
+  if (Number.isNaN(storageprogress)) {
     progressbar.style.width = "0%";
-  progresstext.innerHTML = "0%";
-  }
-  else{
+    progresstext.innerHTML = "0%";
+  } else {
     progresstext.innerHTML = storageprogress.toFixed(4) + "%";
-    if(storageprogress<2){
+    if (storageprogress < 2) {
       progressbar.style.width = "2%";
-    } else{
+    } else {
       progressbar.style.width = storageprogress.toFixed(4) + "%";
     }
   }
@@ -101,12 +101,45 @@ const storageToTextArea = () => {
 };
 
 // localstorage size
-var localStorageSpace  = () =>{
-  var allStrings = '';
-  for(var key in window.localStorage){
-      if(window.localStorage.hasOwnProperty(key)){
-          allStrings += window.localStorage[key];
-      }
+var localStorageSpace = () => {
+  var allStrings = "";
+  for (var key in window.localStorage) {
+    if (window.localStorage.hasOwnProperty(key)) {
+      allStrings += window.localStorage[key];
+    }
   }
-  return allStrings ? 3 + ((allStrings.length*16)/(8*1024)): 'Empty (0 KB)';
+  return allStrings
+    ? 3 + (allStrings.length * 16) / (8 * 1024)
+    : "Empty (0 KB)";
+};
+
+let isplaying = false;
+
+let playbuttondiv = document.getElementById("playbuttondiv");
+let pausebuttondiv = document.getElementById("pausebuttondiv");
+
+let playbutton = document.getElementById("playbutton");
+let pausebutton = document.getElementById("pausebutton");
+
+let play = () => {
+  if(!isplaying){
+    WO.run("");
+    isplaying = true;
+    playbutton.src = "/Icons/playgrey.png";
+    pausebutton.src = "/Icons/pausewhite.png";
+    playbuttondiv.style.backgroundColor = "#0000002b";
+    pausebuttondiv.style.backgroundColor = "#00000000";
+  }
+};
+
+let pause = () => {
+  if(isplaying){
+    WO.halt("");
+    isplaying = false;
+    playbutton.src = "/Icons/playwhite.png";
+    pausebutton.src = "/Icons/pausegrey.png";
+    playbuttondiv.style.backgroundColor = "#00000000";
+    pausebuttondiv.style.backgroundColor = "#0000002b";
+
+  }
 };

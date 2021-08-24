@@ -162,6 +162,7 @@ label.light {
 }
 #installatieinsert{
     display: none;
+justify-content: center
 }
 
 /* buttons */

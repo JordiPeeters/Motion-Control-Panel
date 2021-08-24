@@ -12,12 +12,12 @@ $gegevens->naam = $_GET['naam'];
 
 foreach ($_GET as $key => $value) {
     if ($key != 'insert' && $key != "") {
-        if (str_starts_with($key, 'funct')) {
+        if (startsWith($key, 'funct')) {
             $value = str_replace("_", " ", $value);
 
             $jsonkey = rtrim($value);
         }
-        if (str_starts_with($key, 'command')) {
+        if (startsWith($key, 'command')) {
             $value = str_replace("_", " ", $value);
             $gegevens->$jsonkey = $value;
         }
@@ -37,6 +37,11 @@ $json = json_encode($json, JSON_PRETTY_PRINT);
 file_put_contents('installaties.json', $json);
 
 header('location:index.php');
+
+function startsWith( $haystack, $needle){
+    $length = strlen($needle);
+    return substr($haystack, 0, $length) === $needle;
+}
 
 function console_log($output, $with_script_tags = true)
 {

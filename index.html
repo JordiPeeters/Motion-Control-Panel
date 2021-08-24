@@ -29,8 +29,16 @@
     <div id="homescreen">
         <!-- home screen content -->
         <div id="homescreenbuttonscontainer"></div>
+        <div id="playpausecontainer" >
+            <div id="playbuttondiv" class="playpause" onclick="play()">
+                <img id="playbutton" class="playpauseimage" src="Icons/playwhite.png">
+            </div>
+            <div id="pausebuttondiv" class="playpause" onclick="pause()">
+                <img id="pausebutton" class="playpauseimage" src="Icons/pausegrey.png">
+            </div>
+        </div>
         <div id="homescreenscenes">
-            <p id="scenetitle">scenes</p>
+            <p id="scenetitle">scènes</p>
             <div id="scenebuttonscontainer"></div>
         </div>
     </div>
@@ -42,7 +50,7 @@
         <!-- admin screen content -->
         <textarea id="userlogtext" readonly></textarea>
         <button id="clearlocalstorage">verwijder user log</button>
-        <a href ="http://localhost/Motion-Control-Panel/jsontest/index.php" target="_blank" ><button id="openbackend" >open backend</button></a>
+        <a href ="http://localhost/ControlPanel/php/index.php" target="_blank" ><button id="openbackend" >open backend</button></a>
         <div id="localstoragecapacity">
             <p>local storage ruimte</p>
             <div id="bar">
@@ -85,5 +93,5 @@
 <script src="scripts/loadJson.js"></script>
 <script src="scripts/clock.js"></script>
 <script src="scripts/script.js"></script>
-
+<script src="scripts/extrafuncties.js"></script>
 </html>

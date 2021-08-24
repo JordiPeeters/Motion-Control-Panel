@@ -18,5 +18,6 @@ window.onload = () => {
   fetchJSONFile("php/installaties.json", function (data) {
     console.log("json loaded");
     createButtons(data);
+    createButtonsOverig();
   });
 };

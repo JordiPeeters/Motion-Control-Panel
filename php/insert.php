@@ -15,12 +15,12 @@ if (isset($_POST['insert'])) {
     foreach ($_POST as $key => $value) {
         if ($key != 'insert') {
             console_log($key);
-            if (str_starts_with($key, 'funct')) {
+            if (startsWith($key, 'funct')) {
                 $value = str_replace(" ", "_", $value);
                 $jsonkey = $value;
                 // console_log($jsonkey);
             }
-            if (str_starts_with($key, 'command')) {
+            if (startsWith($key, 'command')) {
                 $gegevens->$jsonkey = $value;
             }
         }
@@ -32,6 +32,12 @@ if (isset($_POST['insert'])) {
     $json = json_encode($json, JSON_PRETTY_PRINT);
     file_put_contents('installaties.json', $json);
     header('location:index.php');
+}
+
+
+function startsWith( $haystack, $needle){
+    $length = strlen($needle);
+    return substr($haystack, 0, $length) === $needle;
 }
 
 function console_log($output, $with_script_tags = true)

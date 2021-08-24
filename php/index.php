@@ -24,7 +24,7 @@
 
                 <legend><span class="number">2</span>Bepaal het aantal functies voor de installatie</legend>
                 <label>Aantal functies</label>
-                <input type="number" id="aantalfuncties" name="quantity" min="1" max="99" value="1">
+                <input type="number" id="aantalfuncties" name="quantity" min="1" max="99" value="1" onkeydown="return (event.keyCode!=13);">
                 <div class="form-group" id="addhere">
                     <input id="addfunctions" type="button" action="none" onclick="maaktekstvakken()" value="Ga verder">
                     <!-- <button onclick="maaktekstvakken()">Ga verder</button> -->
