@@ -125,8 +125,8 @@ let play = () => {
   if(!isplaying){
     WO.run("");
     isplaying = true;
-    playbutton.src = "/Icons/playgrey.png";
-    pausebutton.src = "/Icons/pausewhite.png";
+    playbutton.src = "/Motion-Control-Panel/Icons/playgrey.png";
+    pausebutton.src = "/Motion-Control-Panel/Icons/pausewhite.png";
     playbuttondiv.style.backgroundColor = "#0000002b";
     pausebuttondiv.style.backgroundColor = "#00000000";
   }
@@ -136,8 +136,8 @@ let pause = () => {
   if(isplaying){
     WO.halt("");
     isplaying = false;
-    playbutton.src = "/Icons/playwhite.png";
-    pausebutton.src = "/Icons/pausegrey.png";
+    playbutton.src = "/Motion-Control-Panel/Icons/playwhite.png";
+    pausebutton.src = "/Motion-Control-Panel/Icons/pausegrey.png";
     playbuttondiv.style.backgroundColor = "#00000000";
     pausebuttondiv.style.backgroundColor = "#0000002b";
 
